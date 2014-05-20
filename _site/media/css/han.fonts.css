@@ -325,7 +325,7 @@ pre:not(:lang(zh)):not(:lang(ja)),
 pre :not(:lang(zh)):not(:lang(ja)),
 samp:not(:lang(zh)):not(:lang(ja)),
 samp :not(:lang(zh)):not(:lang(ja)) {
-    font-family: Courier, 'Han Heiti', monospace, sans-serif;
+    font-family:Consolas, Courier, 'Han Heiti', monospace, sans-serif;
 }
 
 

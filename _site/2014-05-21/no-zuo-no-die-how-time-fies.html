@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh-cn">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="darkkate" />
+    <title>No Zuo No Die How Time Fies! | darkkate</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="/feed/" rel="alternate" title="darkkate" type="application/atom+xml" />
+    <!--<link rel="stylesheet" media="all" href="/media/css/han.css">-->
+    
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/css/highlight.css">
+    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>-->
+    <!--<script type="text/javascript" src="/media/js/han.js"></script>-->
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+  </head>
+  <script type="text/javascript">
+    function setTimeSpan(){
+    	var date = new Date();
+    	timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+    }
+    
+    Date.prototype.format = function(format)
+		{
+    var o =
+    	{
+    	    "M+" : this.getMonth()+1, //month
+    	    "d+" : this.getDate(),    //day
+    	    "h+" : this.getHours(),   //hour
+    	    "m+" : this.getMinutes(), //minute
+    	    "s+" : this.getSeconds(), //second
+    	    "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+    	    "S" : this.getMilliseconds() //millisecond
+    	}
+    	if(/(y+)/.test(format))
+    	format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+    	for(var k in o)
+    	if(new RegExp("("+ k +")").test(format))
+    	format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+    	return format;
+		}
+  </script>
+  <body onLoad="setInterval(setTimeSpan,1000);">
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>No Zuo No Die How Time Fies!</h1>
+        </header>
+        <nav>
+        <span><a title="home page" class="" href="/">Home</a></span>
+        <span><a title="about" class="" href="/about/">About</a></span>
+        <span><a title="categories" class="" href="/categories/">Categories</a></span>
+        <span><a title="tags" class="" href="/tags/">Tags</a></span>
+        <span><a title="tags" class="" href="/archive/">Archive</a></span>
+        </nav>
+        <article class="content">
+        <section>
+2014-05-21
+
+<span class="categories">
+ in 
+  <a href="/categories/#nonsense" title="nonsense">nonsense</a>&nbsp;
+  
+</span>, 
+
+
+<span class="tags">
+  tags:
+  
+</span>
+
+</section>
+
+<section class="post">
+<h2>又到了批判自己浪费时间的日常了。</h2>
+
+<h2>D Day</h2>
+
+<p>事情是这样的。</p>
+
+<p>一周之前，貌似是一个慵懒的上午，我躺在床上，然后不知怎么脑中冒出了<strong>固态硬盘</strong>这个词。然后我立马起床看了一个关于笔记本电脑利用光驱位安装固态硬盘的帖子<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>，巧的是我的笔电也刚好是奶牛的 NV47H 系列！内心YY了一下 SSD 让年迈的电脑焕发新生的情景，那画面实在太美。</p>
+
+<p>就这样，我又花了大半个下午看了搜索引擎上大部分有关升级 SSD 的帖子，对双硬盘重装系统过程中可能出现的种种问题都有了了解，并且用 CPU-Z 确认了自己是 HM65 的主板，理论上是支持 SATA 3.0 的，但是当时我买电脑时，HM65 芯片组发生了 B2 步进事件——一部分 HM65 主板的 SATA 接口有问题= =。我当时也确认过自己的不是那一批，但是还是抱着保险的心态又用 AIDA64 确认了一下，我这个主板的确是 B3 步进的，没有那个问题了。</p>
+
+<p>障碍都扫清了，下一个问题又来了：买什么牌子的固态硬盘以及光驱位硬盘托架？</p>
+
+<p>好吧，又花了我好长时间看网上的一些讨论。先是直接在亚马逊上下了<a href="http://www.amazon.cn/SAMSUNG-%E4%B8%89%E6%98%9F-840EVO%E7%B3%BB%E5%88%97-120G-2-5%E8%8B%B1%E5%AF%B8-SATA3-SSD%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/dp/B00E3W15P0/ref=sr_1_2?ie=UTF8&amp;qid=1400610696&amp;sr=8-2&amp;keywords=%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98">三星 840EVO</a> 的单，但是后来又发现 840EVO 是一款相当奇葩的固态硬盘——主流款式中唯一一款使用 TLC 颗粒的。这导致我在发货之前退了货，跑京东上买了<a href="http://item.jd.com/918607.html">英睿达（Crucial）M500</a>。</p>
+
+<p>和 840EVO 同时几乎下单的是光驱位硬盘托架，买这个也烦！因为这玩意有三种规格：7mm/9.5mm/12.5mm，那个和我同款电脑的哥们儿在帖子里也没提到厚度，没办法，我只能把光驱拆下来量了，然后麻烦事又来了——我在前几天的跳蚤市场上把我两套螺丝刀都卖掉了！周围几个宿舍的同学平时要用都是借我的= =，我抱着姑且一试的心态去了 203 ，没想到张鑫告诉我胡泽望在星火杯得过一套螺丝刀！</p>
+
+<p>12.7mm.</p>
+
+<p>我脑残地在淘宝上找了一家店下了单。后果是第二天中午京东就把固态硬盘送到了，而我的光驱位硬盘托架居然还没有发货！！！</p>
+
+<h2>D+1 Day</h2>
+
+<p>我又在睿思交易板块搜索，居然还真有出托架的。怒退货。联系了睿思上那哥们儿，一切都谈妥了，但是……他是个学霸！！他说他不在宿舍，且要11点才回去，第二天交易可否，我很不情愿地答应了第二天交易。</p>
+
+<p>然后我11点的时候还是忍不住了，骑车到他们宿舍楼下，把东西拿到了手。我其实一拿到就有点不满意——本来应该有两颗螺丝来固定硬盘，但是他这个只有一个能旋进去。我先用了，重装系统之后还真遇到了那个帖子里提到的<code>bootmgr is missing</code>，改一下 BIOS 里的启动顺序就没问题了。这里我又作死地安装的是 Win 8.1 为后来发生的坑爹事情埋下了伏笔。</p>
+
+<h2>D+2 Day</h2>
+
+<p>第三天，4K对齐是没什么问题的，装驱动也还好，流氓软件是最让人头疼的，安装驱动精灵，它还给我送了一个百度杀毒！！这我能忍？飞鸟尽，良弓藏；狡兔死，走狗烹——驱动装完，两个都卸载。折腾了好长时间的分区问题，然后系统又一直报警，说我机械硬盘有问题，有数据丢失风险。去他的！我用 DiskGenius 扫了一下午，扫出了一个坏道，然后我有扫了一次，又没扫出来！！！</p>
+
+<p>然后是安装各种软件，我在第一天就列了一个单子：</p>
+
+<ul>
+<li>各种驱动</li>
+<li>Rainmeter</li>
+<li>Fences 2</li>
+<li>锐捷</li>
+<li><p>生产力</p>
+
+<ul>
+<li>Photoshop</li>
+<li>Evernote</li>
+<li>Vim</li>
+<li>matlab</li>
+<li>Git, Github</li>
+<li>Keil uVision 4</li>
+<li>NoteExpress 2</li>
+<li>CTeX</li>
+<li>MS Office</li>
+<li>Octopress</li>
+</ul>
+</li>
+<li><p>General Tools</p>
+
+<ul>
+<li>uTorrent</li>
+<li>Chrome</li>
+<li>完美解码</li>
+<li>迅雷7</li>
+<li>有道</li>
+<li>iTunes</li>
+<li>百度云</li>
+<li>Dropbox</li>
+<li>网易云音乐</li>
+<li>Picasa 3</li>
+<li>PowerDVD</li>
+<li>goagent</li>
+<li>Everthing</li>
+<li>Adobe Reader</li>
+<li>DAEMON</li>
+<li>7-Zip</li>
+</ul>
+</li>
+<li><p>IM</p>
+
+<ul>
+<li>QQ</li>
+</ul>
+</li>
+<li><p>Games</p>
+
+<ul>
+<li>炉石传说</li>
+<li>文明 5</li>
+</ul>
+</li>
+</ul>
+
+
+<p>他们其实就在原来的机械硬盘里，只不过都是黑户，是否兼容 Win 8 也是一个只有天知道的问题，我真是手贱装 Win 8。</p>
+
+<p>我觉得少颗螺丝不放心，退了货（还是晚上11点多去），又在淘宝上买了个新的（还是之前那家店），结果到第四天下午还没发货！！我就烦躁了，联系客服也没人搭理（后来他们跟我说他们店每周六放假）。怒退款，换店。</p>
+
+<h2>D+5 Day</h2>
+
+<p>又过了三天，买的光驱位硬盘托架终于到了。我第一时间装上了电脑。开机又呵呵了——<code>Invalid partition table</code>配合着黑色屏幕出现在我眼前。</p>
+
+<p>百度之，都说是分区表坏了什么的，要进 Win PE 环境，修复分区表。</p>
+
+<p>但是我知道我的固态硬盘上的分区表是不会有问题的，原因应该是电脑启动的首选项变成了机械硬盘。是我手贱，之前在只有机械硬盘的情况下按了开机，想看看会怎样，然后就是<code>Invalid partition table</code>，当时也没在意，就直接关机了。没想到现在把固态硬盘装了上去，电脑还是先从机械硬盘启动，我在 BIOS 上明明不是这样设置的。</p>
+
+<p>我试图进入 BIOS 看看是不是设置变了，坑爹的事情出现了，Win 8 默认的关机是一种深度休眠模式，导致开机怎么按 F2 都不会进入 BIOS。而要关闭深度休眠又必须先进 Win 8，在电源选项里面修改！！！这条路走不通了。</p>
+
+<p>好吧，拆掉机械硬盘，这样就不可能从它启动了。搞定。</p>
+
+<p>还不够烦。其实前面列举的那些软件我还远远没处理完呢，还有兼容性问题：Fences 2 安装之后桌面的图标无法移动了</p>
+
+<h2>D+6 Day</h2>
+
+<h3>无力吐槽的 Octopress</h3>
+
+<p>想在 Windows 下用 Octopress，你得先安装 Git, Ruby, DevKit 还有 Python.虽然我仅看了《版本控制之道——Git》的第一章，对 Ruby, Python 一无所知。这些我都忍了，设置环境变量什么的我也忍了，<code>easy_install pygments</code>的时候系统说没这个命令，我也忍了，Google 搞定。UTF-8 什么的网上文章也很多，也忍了。不过我还是对 Octopress 的工作方式不太理解，最终还是不知道怎么把我本地和 Github 上的两个完全相同的仓库关联起来。</p>
+
+<p>所以——</p>
+
+<h3>我转而投靠 Jekyll</h3>
+
+<p>我惊讶地发现，我在之前捣鼓 Octopress 的时候已经安装了所有 Jekyll 需要的环境（其实这是废话，Octopress 本来就是基于 Jekyll 的）。抱着试一试的心态，我安装了 Jekyll，之前完全没想到，Jekyll 比 Octopress 对人友好——因为 Jekyll 就只有一个 master 分支，fork -> clone 就能用了。</p>
+
+<p>但是，好吧，我还是捣鼓到了晚上。而且一晚上都在折腾代码块的字体，我看完了源文件里所有的 CSS 文件，死马当活马医一般地改了所有的<code>pre</code>, <code>code</code>中的<code>font-family</code>，但是在我浏览器上，那些字体还是无比丑陋的宋体。我又求刘雄看了代码，他指点了一下，还是无法改变效果。</p>
+
+<p>就在我口头上说放弃之后。无聊地审查元素，看看到底是哪个 CSS 规定的字体，发现一行小字：<code>user agent stylesheet</code>。</p>
+
+<p>好吧，知道真相的我眼泪都快掉下来，是我的浏览器的坑爹设置导致的——Serif, Sans-Serif 还有等宽字体都设置的是宋体T_T。</p>
+
+<h2>D+7 Day</h2>
+
+<p>最无聊的是我还花这么多时间把这些无聊的事记下来。
+实在是<strong>No Zuo No Die How Time Fies!</strong></p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p><a href="http://bbs.dgtle.com/thread-25208-1-1.html">『极速“奶牛”！』&mdash;Gateway NV47H笔记本实战升级SSD全记录</a><a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+
+</section>
+<section class="meta">
+
+<span class="author">
+  <a href="http://www.darkkate.com">darkkate</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2014-05-21">2014-05-21</time>
+</span>
+<br/>
+<br/>
+<span>
+	<a  href="http://www.darkkate.com/2014-05-21/welcome-to-jekyll.html" class="pageNav"  >Previous</a>
+	&nbsp;&nbsp;&nbsp;
+	<a   class="pageNavInvalid"  >Next</a>
+</span>
+</section>
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"darkkate"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+<!--
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://www.darkkate.com/2014-05-21/welcome-to-jekyll.html';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+-->
+
+
+        </article>
+      </div>
+
+    <footer>
+        <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> & <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="/about/">darkkate</a></small></p>
+    </footer>
+
+    </div>
+    
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-11490513-1']);
+      _gaq.push(['_setDomainName', 'www.darkkkate.com']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    
+  </body>
+</html>
