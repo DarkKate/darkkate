@@ -97,14 +97,14 @@ Tips:
 5.超级好用的 Chrome 插件：[惠惠购物助手][12]
 
 
-  [1]: http://www.darkkate.com/images/GT-2000.jpg "GT-2000"
+  [1]: /assets/images/GT-2000.jpg "GT-2000"
   [2]: http://www.6pm.com/asics-gt-2000-lime-white-red
   [3]: http://sobear.me
   [4]: http://www.6pm.com "6pm"
   [5]: http://www.sfbuy.com/ "海购丰运"
   [6]: http://www.55haitao.com/bbs/thread-113380-1-1.html
-  [7]: http://www.darkkate.com/images/SFBuy1.jpg
-  [8]: http://www.darkkate.com/images/SFBuy2.jpg
+  [7]: /assets/images/SFBuy1.jpg
+  [8]: /assets/images/SFBuy2.jpg
   [9]: http://www.lawtime.cn/info/baoguanshangjian/jinkoubaoguanliucheng/2011112412917.html
   [10]: http://www.letsebuy.com/
   [11]: http://www.smzdm.com/
