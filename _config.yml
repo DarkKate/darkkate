@@ -1,8 +1,14 @@
 markdown: rdiscount
-permalink: /:categories/:title/
+permalink: /:year-:month-:day/:title/
 url: http://www.darkkate.com
 author: darkkate
 pygments: true
 safe: true
 paginate: 16
+
+rdiscount:
+  extensions:
+    - autolink      # greedily urlify links
+    - footnotes     # footnotes
+    - smart         # typographic substitutions with SmartyPants
 
