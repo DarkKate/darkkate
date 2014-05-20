@@ -4,562 +4,327 @@
         xmlns:atom="http://www.w3.org/2005/Atom"
   >
   <channel>
-    <title>Danny Li</title>
-    <link href="http://dannyli.net/feed/" rel="self" />
+    <title>darkkate</title>
+    <link href="http://www.darkkate.com/feed/" rel="self" />
     <link href="http://webfrogs.github.com" />
-    <lastBuildDate>2013-07-30T00:36:04+08:00</lastBuildDate>
+    <lastBuildDate>2014-05-20T18:48:18+08:00</lastBuildDate>
     <webMaster>ccf.developer@gmail.com</webMaster>
     
     <item>
-      <title>不使用插件为 Jekyll 添加 Sitemap</title>
-      <link href="http://dannyli.net/notes/jekyll-sitemap-without-plugin/"/>
-      <pubDate>2013-07-27T22:17:59+08:00</pubDate>
-      <author>Danny Li</author>
-      <guid>http://dannyli.net/notes/jekyll-sitemap-without-plugin</guid>
-      <content:encoded><![CDATA[<p>将下面的代码保存为 sitemap.xml 文件保存在本地站点 repo 根目录下，编译后 push 到 GitHub 即可。</p>
+      <title>Welcome to Jekyll!</title>
+      <link href="http://www.darkkate.com/jekyll/update/welcome-to-jekyll/"/>
+      <pubDate>2014-05-21T01:21:27+08:00</pubDate>
+      <author>darkkate</author>
+      <guid>http://www.darkkate.com/jekyll/update/welcome-to-jekyll</guid>
+      <content:encoded><![CDATA[<p>You'll find this post in your <code>_posts</code> directory - edit this post and re-build (or run with the <code>-w</code> switch) to see your changes!
+To add new posts, simply add a file in the <code>_posts</code> directory that follows the convention: YYYY-MM-DD-name-of-post.ext.</p>
 
-<div class="highlight"><pre><code class="django"><span class="x">---</span>
-<span class="x">sitemap:</span>
-<span class="x">    priority: 0.7</span>
-<span class="x">    changefreq: monthly</span>
-<span class="x">    lastmod: 2013-07-27T12:49:30-05:00</span>
-<span class="x">---</span>
-<span class="x"> </span>
-<span class="x">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="x">&lt;urlset xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd&quot; xmlns=&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;&gt;</span>
+<p>Jekyll also offers powerful support for code snippets:</p>
 
-<span class="x">  </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">post</span> <span class="k">in</span> <span class="nv">site.posts</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">  &lt;url&gt;</span>
-<span class="x">    &lt;loc&gt;</span><span class="cp">{{</span> <span class="nv">site.url</span> <span class="cp">}}{{</span> <span class="nv">post.url</span> <span class="cp">}}</span><span class="x">&lt;/loc&gt;</span>
-<span class="x">    </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">post.lastmod</span> <span class="o">==</span> <span class="nv">null</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">    &lt;lastmod&gt;</span><span class="cp">{{</span> <span class="nv">post.date</span> <span class="o">|</span> <span class="nf">date_to_xmlschema</span> <span class="cp">}}</span><span class="x">&lt;/lastmod&gt;</span>
-<span class="x">    </span><span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">    &lt;lastmod&gt;</span><span class="cp">{{</span> <span class="nv">post.lastmod</span> <span class="o">|</span> <span class="nf">date_to_xmlschema</span> <span class="cp">}}</span><span class="x">&lt;/lastmod&gt;</span>
-<span class="x">    </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">    &lt;changefreq&gt;weekly&lt;/changefreq&gt;</span>
-<span class="x">    &lt;priority&gt;1.0&lt;/priority&gt;</span>
-<span class="x">  &lt;/url&gt;</span>
-<span class="x">  </span><span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">  </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">page</span> <span class="k">in</span> <span class="nv">site.pages</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">  </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">page.sitemap</span> <span class="p">!</span><span class="o">=</span> <span class="nv">null</span> <span class="k">and</span> <span class="nv">page.sitemap</span> <span class="p">!</span><span class="o">=</span> <span class="nv">empty</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">  &lt;url&gt;</span>
-<span class="x">    &lt;loc&gt;</span><span class="cp">{{</span> <span class="nv">site.url</span> <span class="cp">}}{{</span> <span class="nv">page.url</span> <span class="cp">}}</span><span class="x">&lt;/loc&gt;</span>
-<span class="x">    &lt;lastmod&gt;</span><span class="cp">{{</span> <span class="nv">page.sitemap.lastmod</span> <span class="o">|</span> <span class="nf">date_to_xmlschema</span> <span class="cp">}}</span><span class="x">&lt;/lastmod&gt;</span>
-<span class="x">    &lt;changefreq&gt;</span><span class="cp">{{</span> <span class="nv">page.sitemap.changefreq</span> <span class="cp">}}</span><span class="x">&lt;/changefreq&gt;</span>
-<span class="x">    &lt;priority&gt;</span><span class="cp">{{</span> <span class="nv">page.sitemap.priority</span> <span class="cp">}}</span><span class="x">&lt;/priority&gt;</span>
-<span class="x">  &lt;/url&gt;</span>
-<span class="x">  </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">  </span><span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
-
-<span class="x">&lt;/urlset&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">&#39;Tom&#39;</span><span class="p">)</span>
+<span class="c1">#=&gt; prints &#39;Hi, Tom&#39; to STDOUT.</span></code></pre></div>
 
 
-<p>参考：<a href="http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/">http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/</a></p>
+<p>Check out the <a href="http://jekyllrb.com">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll's GitHub repo</a>.</p>
 ]]></content:encoded>
     </item>
     
     <item>
-      <title>Escape Liquid 模板标签的方法</title>
-      <link href="http://dannyli.net/notes/escape-liquid-tags/"/>
-      <pubDate>2013-07-27T00:17:59+08:00</pubDate>
-      <author>Danny Li</author>
-      <guid>http://dannyli.net/notes/escape-liquid-tags</guid>
-      <content:encoded><![CDATA[<p>Jekyll 网站模板使用的的 Liquid 模板语言。当网页中要展示某段 Liquid 模板代码本身时，需要使用 raw 标签进行 escape：</p>
+      <title>记第一次海淘</title>
+      <link href="http://www.darkkate.com/lifestyle/shopping/shopping-overseas/"/>
+      <pubDate>2014-05-05T20:42:06+08:00</pubDate>
+      <author>darkkate</author>
+      <guid>http://www.darkkate.com/lifestyle/shopping/shopping-overseas</guid>
+      <content:encoded><![CDATA[<p>今天（5月6日）终于完成了第一次<strong>海淘</strong>。回想从对海淘一无所知到心存疑虑再到完成交易。学到的概念还是挺多的。感觉有必要记录下来，一来长时间之后如果我又忘了一些概念，可以重新看一遍这里而不用再一次 Google 或在各种充斥着水帖的论坛里找零碎的教程；二来也希望能对海淘<strong>一无所知</strong>的朋友有所帮助。</p>
 
-<pre><code>{ % raw % } 
-    Liquid 代码内容
-{ % endraw % }
-</code></pre>
+<!-- more -->
 
-<p>但是，如何 escape 带有 raw 标签的代码？比如上面这个，我只能把百分号和括号写开，不然无法编译成功。</p>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Jekyll 代码高亮利器 Pygments 配置</title>
-      <link href="http://dannyli.net/notes/pygments-config/"/>
-      <pubDate>2013-07-26T22:17:59+08:00</pubDate>
-      <author>Danny Li</author>
-      <guid>http://dannyli.net/notes/pygments-config</guid>
-      <content:encoded><![CDATA[<p><a href="http://pygments.org/">Pygments</a> 是 Jekyll 最常用的代码高亮程序。假设 Python 的 easy_install 已经可用，则执行</p>
-
-<pre><code>easy_install Pygments
-</code></pre>
-
-<p>安装 Pygments.</p>
-
-<p>Pygments 自带多种样式。在 Python 中用下面的命令可以查看所有样式列表：</p>
-
-<div class="highlight"><pre><code class="pycon"><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pygments.styles</span> <span class="kn">import</span> <span class="n">STYLE_MAP</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">STYLE_MAP</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-<span class="go">[&#39;monokai&#39;, &#39;manni&#39;, &#39;rrt&#39;, &#39;perldoc&#39;, &#39;borland&#39;, &#39;colorful&#39;, &#39;default&#39;, &#39;murphy&#39;, &#39;vs&#39;, &#39;trac&#39;, &#39;tango&#39;, &#39;fruity&#39;, &#39;autumn&#39;, &#39;bw&#39;, &#39;emacs&#39;, &#39;vim&#39;, &#39;pastie&#39;, &#39;friendly&#39;, &#39;native&#39;]</span>
-</code></pre></div>
-
-
-<p>关于不同样式，可以在 <a href="http://pygments.org/demo">Demo</a> 页面选择一个 demo，再在右边样式列表中选择不同样式查看效果。</p>
-
-<p>下一步是生成所需的 CSS 文件。假设我们想使用 <code>friendly</code> 样式，则在 Terminal 或 cmd 进入 CSS 所在路径下执行</p>
-
-<pre><code>pygmentize -S friendly -f html &gt; highlight.css
-</code></pre>
-
-<p>则产生一个 <code>highlight.css</code> 文件。</p>
-
-<p>下面介绍如何在 Jekyll 中使用 Pygments，假设一段代码需要被高亮，则在模板里使用以下 <a href="http://liquidmarkup.org/">Liquid</a> 代码</p>
-
-<pre><code>{% highlight shortname %}
-    代码内容
-{% endhighlight shortname %}
-</code></pre>
-
-<p>name 是不同语言对应的短名称，可以在<a href="http://pygments.org/docs/lexers/">这里</a>查看。</p>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Windows 安装 Jekyll 若干问题的解决</title>
-      <link href="http://dannyli.net/notes/fix-problems-of-jekyll-on-windows/"/>
-      <pubDate>2013-07-26T17:17:59+08:00</pubDate>
-      <author>Danny Li</author>
-      <guid>http://dannyli.net/notes/fix-problems-of-jekyll-on-windows</guid>
-      <content:encoded><![CDATA[<p>Jekyll 官方网站是以外链的形式给出的 <a href="http://www.madhur.co.in/blog/2011/09/01/runningjekyllwindows.html">Windows 下安装 Jekyll 方法</a>。这个方法总体上是可行的，但是这篇文章写于 2011 年，并且没有考虑中文环境下的问题，所以安装过程中会碰到种种问题。</p>
 
 <hr />
 
-<p>一，软件版本问题。建议在 Windwos 7 中下载安装以下版本 Ruby 和 DevKit：</p>
+<h2>什么是<strong>海淘</strong>？</h2>
+
+<p>我一开始最困惑的就是「海淘」这个名词。作为一个网购就意味着<strong>淘宝、亚马逊、京东</strong>的人来说，我第一次听说海淘还以为是一个网站：淘宝网的分支业务或是另一个专门贩卖海外商品的一站式网购平台。后来才知道海淘是指一类行为：从海外网购。</p>
+
+<p>另，海淘最大的缺点应该就是漫长的运输时间，如果受不了将近一个月的等待，建议还是别海淘。</p>
+
+<h2>为什么海淘？</h2>
+
+<p><img src="/images/blog/GT-2000.jpg" title="GT-2000" alt="GT-2000" /></p>
 
 <ul>
-<li><a href="http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-1.9.3-p448.exe?direct">Ruby 1.9.3-p448</a></li>
-<li><a href="https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe">DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe</a></li>
+<li><strong>便宜</strong>。如果没有与国内相比相当可观的差价，相信没人会舍近求远的。举个例子：我这次买的 <a href="http://www.6pm.com/asics-gt-2000-lime-white-red">asics GT-2000</a> 在天猫旗舰店上是<code>￥990</code>，而在 6pm.com 上是<code>$49.99</code>，折合人民币<code>￥310</code>，加上<code>$15</code>转运费，总共折合<code>￥403</code>。相当于4折了！</li>
+<li>其他原因</li>
 </ul>
 
 
-<p>2.0 版本 Ruby 似乎会碰到一些问题。文章作者给出的一个便携版的 Jekyll 也挺坑爹，400+ M 保存在 Dropbox 上，下载解压花了我 1 个多小时，安装还不成功。主要就是因为他使用的是 Ruby 2.0。不用尝试这个了。</p>
+<h2>怎么样海淘？</h2>
 
-<hr />
-
-<p>二，运行 <code>jekyll serve</code> 时显示</p>
-
-<pre><code>Liquid Exception: No such file or directory - /bin/sh in ...
-</code></pre>
-
-<p>这个是语法高亮插件 Pygments 引起。解决方法是卸载最新版本的 Pygments （0.5.1+），重新安装 0.5.0 版本的 Pygments:</p>
-
-<pre><code>gem uninstall pygments.rb --version "=0.5.2"
-gem install pygments.rb --version "=0.5.0"
-</code></pre>
-
-<hr />
-
-<p>三，和第二个问题类似，提示</p>
-
-<pre><code>Liquid Exception: No such file or directory - python ...
-</code></pre>
-
-<p>原因是没将 Python 的路径添加为 PATH 环境变量。</p>
-
-<hr />
-
-<p>四，运行 <code>jekyll serve</code> 不成功，显示</p>
-
-<pre><code> ... invalid byte sequence in GBK  ...
-</code></pre>
-
-<p>这个是中文编码引起的问题。一旦 post 中有中文字符就会出现这样的问题。当然这个是 Windows 下特有的问题。解决方法是将 <code>C:/Ruby193/lib/ruby/gems/1.9.1/gems/jekyll-0.11.2/lib/jekyll/convertible.rb</code> 文件 （路径可能与此不同）中的</p>
-
-<div class="highlight"><pre><code class="ruby"><span class="nb">self</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="nb">name</span><span class="p">))</span> 
-</code></pre></div>
-
-
-<p>改为</p>
-
-<div class="highlight"><pre><code class="ruby"><span class="nb">self</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="nb">name</span><span class="p">),</span> <span class="ss">:encoding</span> <span class="o">=&gt;</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-
-<h3>References</h3>
-
-<ul>
-<li><a href="http://www.madhur.co.in/blog/2011/09/01/runningjekyllwindows.html">http://www.madhur.co.in/blog/2011/09/01/runningjekyllwindows.html</a></li>
-<li><a href="http://stackoverflow.com/questions/17364028/jekyll-on-windows-pygments-not-working">http://stackoverflow.com/questions/17364028/jekyll-on-windows-pygments-not-working</a></li>
-<li><a href="http://chxt6896.github.io/blog/2011/12/01/blog-pygments.html">http://chxt6896.github.io/blog/2011/12/01/blog-pygments.html</a></li>
-</ul>
-
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>使用 GitHub Pages 建立博客</title>
-      <link href="http://dannyli.net/notes/blogging-with-github-pages/"/>
-      <pubDate>2013-07-25T22:17:59+08:00</pubDate>
-      <author>Danny Li</author>
-      <guid>http://dannyli.net/notes/blogging-with-github-pages</guid>
-      <content:encoded><![CDATA[<h2>GitHub Pages</h2>
-
-<hr />
-
-<p>可以利用 <a href="http://pages.github.com/" title="GitHub Pages">GitHub Pages</a> 创建个人博客。对于小白，首先要知道什么是 Git 和 GitHub。当然，不知道也无所谓。但是利用 GitHub Pages 写博客（大多数程序员用其当笔记本），必须满足以下条件：</p>
-
-<ul>
-<li>喜欢折腾；</li>
-<li>喜欢简洁和格式化；</li>
-<li>学会使用 <a href="http://daringfireball.net/projects/markdown/" title="Markdown">Markdown</a> 或其他一种标记语言</li>
-</ul>
-
-
-<p>这里并不想详细写出建立 GitHub Pages 的每一步，因为关于它的建立、设置、使用网上的资料已经很详细。</p>
-
-<h2>创建 GitHub 账户</h2>
-
-<hr />
-
-<p>当然你要有一个 <a href="https://github.com/">GitHub</a> 账户。注册成功后参照下面的页面下载或配置本地 Git 环境。</p>
-
-<ul>
-<li><a href="https://help.github.com/articles/set-up-git">https://help.github.com/articles/set-up-git</a></li>
-</ul>
-
-
-<p>Windows 用户建议使用 GitHub 的 native app。非常直观好用，不用（相对）繁琐的命令行操作。</p>
-
-<h2>创建 GitHub Page</h2>
-
-<hr />
-
-<p>每一个 GitHub 分配了一个形如 username.github.io 的个人网址。比如我的是 dannyli.github.io。但是这个网址默认是没有启用的。按照下面页面指示的方法利用官网的 Automatic Page Generator 创建 GitHub Page。</p>
-
-<ul>
-<li><a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">https://help.github.com/articles/creating-pages-with-the-automatic-generator</a></li>
-</ul>
-
-
-<h2>使用本地 GitHub app</h2>
-
-<hr />
-
-<p>使用 GitHub app。将建立的空 repo "username.github.io" clone 到本地。如果是 OS X/Linux 环境，可以按照 Jekyll 官网给的方法很轻松的创建本地 Jekyll 环境，在本地编译调试产生一个默认的网站。Windows 下似乎也有方法创建本地环境，但是似乎比较繁琐。</p>
-
-<p>一个好办法是在 GitHub 搜索并 fork 别人的模板，例如 GitHub 创始人给出的一些网站：</p>
-
-<ul>
-<li><a href="https://github.com/mojombo/jekyll/wiki/sites">https://github.com/mojombo/jekyll/wiki/sites
-</a></li>
-</ul>
-
-
-<p>把 fork 的 repo 下载下来，复制粘贴到之前 clone 到本地的文件夹内，然后进行相应的修改。这种“剽窃”在开源社区是合理的，但是注意保留作者的信息（如果作者有申明）。</p>
-
-<h2>利用 Markdown 写博客</h2>
-
-<hr />
-
-<p>Markdown 其实不是一种新语言，只是 HTML 的一种转换器。语法可参照官方的 <a href="http://daringfireball.net/projects/markdown/syntax">Syntax</a>。编辑器这里推荐：</p>
-
-<ul>
-<li><a href="http://mouapp.com/">Mou</a> (OS X)</li>
-<li><a href="http://markdownpad.com/">MarkdownPad</a> (Windows)</li>
-</ul>
-
-
-<p>编辑好的文件保存为 .md 格式文件，按照要求个文件名格式保存在 _post 目录下。</p>
-
-<p>然后使用本地环境编译，然后 push 或者 sync 所有文件到 GitHub。 .md 文件都得转换成 html 格式文件才能用浏览器查看。所以，如果像 Windows 系统没有安装 Ruby 和 Jekyll 环境的是不行的。但是可以在没有 Jekyll 环境的 Windows 电脑上利用 Markdown 文件写文章，把 .md 文件 sync 到 GitHub，然后等有时间的时候再在 OS X 的电脑中编译并 sync。</p>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>OS X 下安装配置 Jekyll</title>
-      <link href="http://dannyli.net/notes/osx-jekyll/"/>
-      <pubDate>2013-07-25T16:17:59+08:00</pubDate>
-      <author>Danny Li</author>
-      <guid>http://dannyli.net/notes/osx-jekyll</guid>
-      <content:encoded><![CDATA[<h2>Xcode</h2>
-
-<hr />
-
-<p>在 Mac App Store 中搜索安装 <a href="https://developer.apple.com/xcode/%E2%80%8E">Xcode</a>。</p>
-
-<p>安装完毕后，进入 Xcode，在 <code>Preferences</code> 里的 <code>Downloads</code> 中安装 <strong>Command Line Tools</strong>.</p>
-
-<h2>Ruby</h2>
-
-<hr />
-
-<p>OS X 自带 Ruby。在终端里输入</p>
-
-<pre><code>ruby -v
-</code></pre>
-
-<p>即可查看所安装的 Ruby 版本。</p>
-
-<h2>RubyGems</h2>
-
-<hr />
-
-<p>访问 <a href="http://rubygems.org/pages/download">http://rubygems.org/pages/download</a> 下载 RubyGems 文件。将文件解压到本地，在终端执行：</p>
-
-<pre><code>sudo ruby setup.rb
-</code></pre>
-
-<h2>Jekyll</h2>
-
-<hr />
-
-<p>终端执行</p>
-
-<pre><code>gem install jekyll
-gem install rdiscount
-</code></pre>
-
-<p>执行时间可能较长。</p>
-
-<p>若提示</p>
-
-<blockquote><p>ERROR: Failed to build gem native extension</p></blockquote>
-
-<p>多半是因为没装 Xcode Command Line Tools 引起。</p>
-
-<p>安装完毕后，在指定目录下执行</p>
-
-<pre><code>jekyll new my-awesome-site
-cd my-awesome-site
-jekyll serve --watch
-</code></pre>
-
-<p>则可在浏览器中以 <code>localhost:4000</code> 访问。<code>--watch</code> 选项开启页面 regeneration，也就是修改页面后刷新浏览器立即可以看到更新。</p>
-
-<h2>Pygments (语法高亮)</h2>
-
-<hr />
-
-<p>执行一下语句：</p>
-
-<pre><code>sudo easy_install Pygment
-</code></pre>
-
-<p>Pygments 语法可参照 <a href="http://pygments.org/docs/lexers/">http://pygments.org/docs/lexers/</a></p>
-
-<h2>资源</h2>
-
-<hr />
-
-<p>下面列出学习 Jekyll/Git/Markdown 的一些好资源：</p>
-
-<ul>
-<li>Jekyll: <a href="http://jekyllrb.com/docs/home/">http://jekyllrb.com/docs/home/</a></li>
-<li>Markdown: <a href="http://daringfireball.net/projects/markdown/">http://daringfireball.net/projects/markdown/</a></li>
-<li>Github: <a href="https://help.github.com/">https://help.github.com/</a></li>
-<li>GotGithub: <a href="http://www.worldhello.net/gotgithub/">http://www.worldhello.net/gotgithub/</a></li>
-</ul>
-
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>英语文章标题的首字母大写规则</title>
-      <link href="http://dannyli.net/notes/rules-for-capitalization-in-titles/"/>
-      <pubDate>2012-05-05T22:17:59+08:00</pubDate>
-      <author>Danny Li</author>
-      <guid>http://dannyli.net/notes/rules-for-capitalization-in-titles</guid>
-      <content:encoded><![CDATA[<p>英语文章标题的首字母大写 (capitalization) 规则有以下几种形式:</p>
-
-<h2>一、标题首字母以及专有名词首字母大写</h2>
-
-<hr />
-
-<p>这个是 <a href="http://www.apastyle.org/manual/">APA (American Psychological Association)</a> 所推荐的标题格式，包括 IEEE 在内的论文期刊很多也是使用这种风格。e.g.</p>
-
-<blockquote><p>Why it’s never too late to learn grammar</p></blockquote>
-
-<h2>二、所有单词首字母都大写</h2>
-
-<hr />
-
-<p>这种方式只是很简单地把每个单词的首字母进行大写，使用得较少。e.g.</p>
-
-<blockquote><p>Why It’s Never Too Late To Learn Grammar</p></blockquote>
-
-<h2>三、部分单词首字母都大写</h2>
-
-<hr />
-
-<p>这种方式最常见。似乎绝大多数的英文书刊报纸文章标题都是使用这种方式。e.g.</p>
-
-<blockquote><p>Why It’s Never Too Late to Learn Grammar</p></blockquote>
-
-<p>遵循以下规则：</p>
-
-<ul>
-<li>第一个和最后一个单词的首字母大写</li>
-<li>所有名词，代词，动词，形容词，副词，从属连词 (because, as, although) 大写</li>
-<li>短介词 (to, at, in, out, on, off, with, from, upon, into, by, as)、冠词 (a, an, the) 小写</li>
-<li>并列连词 (and, but, or) 小写</li>
-</ul>
-
-
-<p>其实关于标题首字母大写的问题是我在对 MP3 标题格式化时候遇到的。MP3TAG 的建议是使用第二种方式，简单，比较好写脚本，虽然不是很美观。不使用第三种方式的一个原因是这种规则只适合英文标题，遇到非英文标题就没有可参照的规则了。</p>
-
-<p>补充：</p>
-
-<h2>四、iTunes 命名规则</h2>
-
-<hr />
-
-<p>基本和第三种规则相同。但是只有以下词 (不在句首) 小写：</p>
-
-<ul>
-<li>冠词 (a, an, the)</li>
-<li>某些不表示方位的短介词 (of, to, from, for)*   并列连词 (and, but, or)</li>
-</ul>
-
-
-<h3>References</h3>
-
-<ul>
-<li><a href="http://www.dailywritingtips.com/rules-for-capitalization-in-titles/">http://www.dailywritingtips.com/rules-for-capitalization-in-titles/</a></li>
-<li><a href="http://wiki.musicbrainz.org/CapitalizationStandardEnglish">http://wiki.musicbrainz.org/CapitalizationStandardEnglish</a></li>
-<li><a href="http://www.intermezzogroup.com/download/Documents/iTunesStyleGuide5.pdf">http://www.intermezzogroup.com/download/Documents/iTunesStyleGuide5.pdf</a></li>
-</ul>
-
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Windows 下自动连接 NTU VPN（不用每次输入用户名密码）</title>
-      <link href="http://dannyli.net/notes/connect-ntu-vpn-automatically-in-windows/"/>
-      <pubDate>2012-04-15T05:17:59+08:00</pubDate>
-      <author>Danny Li</author>
-      <guid>http://dannyli.net/notes/connect-ntu-vpn-automatically-in-windows</guid>
-      <content:encoded><![CDATA[<p>在 Windows 下连接 NTU 的 VPN 一般使用 Juniper Network 的 Network Connection 程序。每次连接都要手动输入用户名密码，非常不方便。今天研究了一下通过命令行连接 NTU VPN。通过命令行可以实现在桌面创建一个快捷方式，双击图标直接连接 NTU VPN。</p>
-
-<p>假设已经安装好了 NTU 官方提供的<a href="http://www.ntu.edu.sg/cits/itnetworking/remoteaccess/Pages/quickstartguide.aspx#winvpn">SSL VPN 程序</a> (Juniper Networks - Network Connection)。</p>
-
-<p>这里其实是使用一个叫 nclauncher 的命令程序。该文件位于 Network Connection 程序的安装目录下。Network Connection 程序的默认安装目录通常是 <code>%ProgramFiles%\Juniper Networks</code>。 该命令的用法可以通过输入 <code>nclauncher -help</code> 获得。在桌面创建快捷连接的步骤如下：</p>
+<p>从逻辑上来讲其购物流程与在国内网购是类似的：</p>
 
 <ol>
-<li><p>打开记事本，输入以下内容</p>
-
-<pre><code> "%ProgramFiles%\Juniper Networks\Network Connect 7.3.0\nclauncher" -url https://ntuvpn.ntu.edu.sg/ -u [用户名] -p [密码] -r [域]"
- EXIT
-</code></pre>
-
-<p>其中 <code>[用户名]</code> 和 <code>[密码]</code> 分别是 NTU 分配的用户名和密码，[域] 可填写 <strong>Student</strong>, <strong>Assoc</strong> 或者 <strong>Staff</strong>，注意大小写不能错，第一个字母必须是大写。</p>
-
-<p>  <code>%ProgramFiles%</code> 是程序默认的安装路径。如果操作系统是 64 位 Windows，则得将 <code>%ProgramFiles%</code> 改为 <code>%ProgramFiles(x86)%</code>。</p></li>
-<li><p>保存该文件为 .bat 或者 .cmd 文件到本地磁盘，如桌面；</p></li>
-<li>若要连接 VPN，双击该文件即可。</li>
+<li>买东西：从国外购物网站下单</li>
+<li>寄回来：从国外寄回国内</li>
 </ol>
 
+
+<p>但是如果具体操作其实还是有点麻烦的。麻烦的原因主要有两点：</p>
+
+<ol>
+<li>国外购物网站一般不支持支付宝和国内储蓄卡的网银。我们首先得有一张<strong>双币信用卡</strong>，才能完成支付。另，使用信用卡在国外网购是不需要密码直接就能扣钱的，所以保护好信用卡信息（信用卡账单地址，姓名，卡号，安全码，有效期限）真的很重要。在这里我要特别感谢<a href="http://sobear.me">刘雄</a>，没有刘富帅支援我信用卡我就只能望洋兴叹了。</li>
+<li>国外购物网站一般也是没法直接寄到国内地址的。我们得先找一家转运公司，先寄到转运公司在海外的仓库，再由转运公司负责运回国内。</li>
+</ol>
+
+
+<p>下面以我这次购物为例讲一下具体流程：</p>
+
+<h3>一、选择购物网站和转运公司，然后注册账号</h3>
+
+<ul>
+<li>我想买的是鞋，<strong><a href="http://www.6pm.com" title="6pm">6pm</a></strong> 的折扣是相当给力的。所以选择它。</li>
+<li>选择转运公司无非看三点：价格、速度、服务水平。网上的经验帖都指出转运公司的选择是非常重要的，它是影响我们这次购物体验的最主要因素。</li>
+<li>但是转运公司太多了，天天、天翼、风雷、360海淘等等，十几家让人眼花缭乱，搜索引擎上也有各种抱怨转运公司的帖子，我出于怕麻烦和对顺丰的信任选择了顺丰旗下的<strong><a href="http://www.sfbuy.com/" title="海购丰运">海购丰运 SFBuy</a></strong>。SFBuy 也是用信用卡支付运费，其他的转运公司一般都支持支付宝。</li>
+<li>现在（2014.04）注册 SFBuy 还可获赠一个月会员服务，挺给力的，相关福利可直接去他们网站上看。</li>
+</ul>
+
+
+<p>感觉需要注意的有几点：</p>
+
+<p>1.信用卡信息的填写需要<code>姓名</code>，<code>卡号</code>，<code>安全码</code>，<code>有效期限</code>，<code>信用卡账单地址</code>，而在 6pm 的网站上，账单地址的选项里只有美国的州= =。所以邮编应填<code>99999</code>，州选择<code>AA</code>，城市填账单地址城市的拼音加 China，例如我填的是<code>Hangzhou China</code>。</p>
+
+<p>2.而配送地址就填转运公司给的地址，收件人姓名得按转运公司的规定来，这些转运公司的网站上应该都有。需要注意的是顺丰在美国有两个仓库，一个在纽约，另一个在特拉华州，寄到特拉华州是免税的（代价是更新入仓记录需要二个工作日，比寄到纽约多一个工作日）。</p>
+
+<p>3.商品通过中国海关时顺丰是会主动报关的，在 SFBuy 注册的时候就上传好身份证扫描件吧，免得之后忘记了在海关那浪费更多时间。</p>
+
+<h3>二、下单、付款</h3>
+
+<p>两个网站的信息如果都填好了，那么就很简单了，看好了买就行。第一次买还是挺激动的。然后我就碰到了第一个问题：在6pm上下了单，银行也扣款了，shipping status显示的状态是received。这是下单成功了吗？另外，为什么我的total charged显示的却是0呢？</p>
+
+<p>解答是：购买之后系统会给你发个邮件，确认收到了你的订单。状态显示received是收到了订单，在处理。发货的时候会给你发邮件，里面有物流追踪号码。 发货的时候真正扣款。
+相关帖子在<a href="http://www.55haitao.com/bbs/thread-113380-1-1.html">这里</a>。</p>
+
+<h3>三、转运</h3>
+
+<ul>
+<li><code>4月16日</code>下单</li>
+<li><code>4月18日</code>UPS 显示配送到了</li>
+<li><code>4月20日</code>顺丰发邮件来说鞋子到了我的 SFBuy 储物箱。我登陆了 SFBuy 的网站，上面显示了他们称重的照片，2.3磅。另外加算体积重量一共要算6磅，运费30刀！！这我能忍？当即要求重新包装，减小体积。
+<img src="/images/blog/SFBuy1.jpg" alt="Repack 之前" /></li>
+<li><code>4月22日</code>邮件告诉我重新包装好了。称重2磅，算体积重量3磅，运费15刀。可以接受，令配送之。这里需要提一点的就是 SFBuy 也是发货之后就自动从信用卡扣钱了。而我忘了提前知会刘雄，而且我是凌晨完成的这个手续，弄完之后就关手机睡觉了，导致刘雄一觉醒来莫名地收到信用卡消费15美刀的短信，然后打我电话发我微信都联系我上我，他还以为信用卡被盗刷了，直接果断挂失= =。刘雄的反应是很果断而正确的，是我沟通出了问题。这件事教育我们借别人的卡或钱一定要沟通好，不要大意。
+<img src="/images/blog/SFBuy2.jpg" alt="Repack 之后" /></li>
+<li>然后就是漫长的等待！！！！</li>
+</ul>
+
+
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>时间</th>
+<th>快件状态</th>
+<th style="text-align:center;">当前地点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2014-04-23</td>
+<td>12:31:16</td>
+<td>收件</td>
+<td style="text-align:center;">纽约</td>
+</tr>
+<tr>
+<td>2014-04-23</td>
+<td>16:48:13</td>
+<td>快件在 美国纽约营运中心 装车, 准备送往下一站 天水圍集散中心</td>
+<td style="text-align:center;">纽约</td>
+</tr>
+<tr>
+<td>2014-04-29</td>
+<td>01:54:40</td>
+<td>快件在 天水圍集散中心 装车, 准备送往下一站 天津集散中心</td>
+<td style="text-align:center;">香港</td>
+</tr>
+<tr>
+<td>2014-05-05</td>
+<td>10:48:42</td>
+<td>快件到达天津集散中心</td>
+<td style="text-align:center;">天津市</td>
+</tr>
+<tr>
+<td>2014-05-05</td>
+<td>16:11:39</td>
+<td>快件在 天津集散中心 装车, 准备送往下一站 天津集散中心</td>
+<td style="text-align:center;">天津市</td>
+</tr>
+<tr>
+<td>2014-05-05</td>
+<td>23:41:43</td>
+<td>快件在 天津集散中心     装车, 准备送往下一站 天津集散中心</td>
+<td style="text-align:center;">天津市</td>
+</tr>
+<tr>
+<td>2014-05-06</td>
+<td>02:12:27</td>
+<td>快件在 天津集散中心     装车, 准备送往下一站 西安集散中心</td>
+<td style="text-align:center;">天津市</td>
+</tr>
+<tr>
+<td>2014-05-06</td>
+<td>10:48:29</td>
+<td>快件到达西安集散中心</td>
+<td style="text-align:center;">西安市/咸阳市</td>
+</tr>
+<tr>
+<td>2014-05-06</td>
+<td>14:00:26</td>
+<td>快件在 西安集散中心 装车, 准备送往下一站 西安</td>
+<td style="text-align:center;">西安市/咸阳市</td>
+</tr>
+<tr>
+<td>2014-05-06</td>
+<td>15:15:28</td>
+<td>派件出仓(派件人:冯国权,电话:18706873051)</td>
+<td style="text-align:center;">西安市/咸阳市</td>
+</tr>
+<tr>
+<td>2014-05-06</td>
+<td>16:30:48</td>
+<td>上门派件</td>
+<td style="text-align:center;">西安市/咸阳市</td>
+</tr>
+<tr>
+<td>2014-05-06</td>
+<td>16:30:48</td>
+<td>签收人是：已签收</td>
+<td style="text-align:center;">西安市/咸阳市</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>Tips:</p>
+
+<p>1.体积大而重量轻的物品将会按航空公司标准的轻抛货物计算： 长 x 宽 x 高(英寸) / 166 = 轻抛货重量(磅)</p>
+
+<p>2.<a href="http://www.lawtime.cn/info/baoguanshangjian/jinkoubaoguanliucheng/2011112412917.html">什么是报关、结关和清关？</a></p>
+
+<p>3.海淘入门：<a href="http://www.letsebuy.com/">海外购论坛</a></p>
+
+<p>4.货比三家：<a href="http://www.smzdm.com/">什么值得买</a></p>
+
+<p>5.超级好用的 Chrome 插件：<a href="http://zhushou.huihui.cn/">惠惠购物助手</a></p>
 ]]></content:encoded>
     </item>
     
     <item>
-      <title>使用 EndNote 和 LaTeX/BibTeX 建立论文的参考文献</title>
-      <link href="http://dannyli.net/notes/using-endnote-latex-bibtex/"/>
-      <pubDate>2011-11-01T05:17:59+08:00</pubDate>
-      <author>Danny Li</author>
-      <guid>http://dannyli.net/notes/using-endnote-latex-bibtex</guid>
-      <content:encoded><![CDATA[<p><a href="http://www.endnote.com/">EndNote</a> 是整理论文参考文献 (citation) 的绝佳工具。如果能把 EndNote 与 LaTeX 结合使用是再好不过了。这里介绍一种将 EndNote 内的书目导出为 LaTeX 可用的 BibTeX 格式的方法。</p>
+      <title>没有结束</title>
+      <link href="http://www.darkkate.com/nonsense/ready/"/>
+      <pubDate>2014-01-11T21:08:00+08:00</pubDate>
+      <author>darkkate</author>
+      <guid>http://www.darkkate.com/nonsense/ready</guid>
+      <content:encoded><![CDATA[<p>直到回家之前，我还是有一种把这几个月的一些零碎的认识、想法整理一下的强烈的意愿。</p>
 
-<p>这里使用的软件版本为 EndNote <del>X4</del> X6。NTU 的学生可以在<a href="http://www3.ntu.edu.sg/lib/ISD/EndNote/License.htm">这里</a>下载免费使用。假设 EndNote 里已经添加了所需的参考文献信息。很多数据库都自带导入 citation 到 EndNote 的功能，这里就不详细介绍。</p>
+<!-- more -->
 
-<h2>EndNote 的配置</h2>
 
-<hr />
+<h3>我珍视这几个月</h3>
+
+<p>考研前这几个月到底对我有多重要呢？现在我还无法给自己一个明确的答案，但其份量无疑是沉甸甸的。如果不是选择考研，我可能不会重新认识自己并做出了一定的积极的改变。</p>
+
+<p>我重新认识了高强和徐畅。确切的说，考研之前我只是知道他们叫「高强」、「徐畅」而已。</p>
+
+<p>我重新审视、正视了过去的浑浑噩噩。重新认识了吃饭问题、自习的问题、在寝室学习的问题。一个人吃饭又怎样？室友不上自习，我一个人就不能上自习了？在寝室学习完全就是扯淡。</p>
+
+<p>我过去的很多行为不过是想在宿舍找一种归属感、集体感、怕不合群、怕搞不好关系、怕这怕那。现在看来，实在愚蠢。<a href="http://www.zhihu.com/question/22376248">「如何在恶劣的大学寝室氛围中独善其身？」</a>
+实在是一个好问题。但有时候一些自身问题的解决旁人的帮助、教育实在有限，自我的意识才是最关键的。</p>
+
+<p>在备考的最后一个月里，我深感做得最正确的一件事就是搬出了 216，到 203 的客厅睡。当无力改变环境的时候，应该勇于改变自己。可以完全按自己的节奏规律地作息，享受自己独立的空间实在是妙不可言。以至于我后来一直后悔没有早点搬过去。</p>
+
+<p>李辉在考前十几天那段颓废时光也令我印象深刻，一天除了打 DotA 就是看电影，自暴自弃、破罐子破摔，像个废物、逃兵，一开始我还好好地跟他说：这都什么时候了你还打 DotA？ 看他无动于衷然后我隔几天就去嘲讽他一下，或是叹口气走人。有效果吗？完全没感觉。他下午在我们宿舍看电视时刘雄还过去骂了他一次。到1月2号晚上去睡觉前聊天时他对我说：今天什么情况，先是孟伟然后是高强现在又是你，都来训我一顿。我听了这句话暗自感到好笑：他现在才觉得我跟他说话是教育他。第二天去 C 楼收拾书的时候看到他已经像个正常人了，他说他昨天一晚上没睡好觉，翻来覆去地思考这些天的问题。</p>
+
+<p>在这里我要特别感谢一下高强，好多交流考研经验的文章都提到「一个靠谱的研友很重要」，我是深有体会，直到十月份我还是吊儿郎当地上自习，早上起不来，晚上睡不着。但看到高强每天都8点来10点走我也渐渐产生了向他看齐的心态，最终，我也差不多做到了。每天吃饭路上、晚上回去的路上的闲扯真的是很欢乐，坐了一天之后泡热水脚的时候全身都热起来的感觉也是很美妙。</p>
+
+<p>虽然对这段时间的复习我对自己还有相当多的不满意的地方：</p>
 
 <ul>
-<li>下载<a href="http://dannyli.net/downloads/IEEETrans_BibTeX_Export.ens">这个文件</a>，然后把它放到 EndNote 安装文件夹下的 styles 子文件夹中。我这里使用的是 IEEETrans 兼容的格式，如果需要其他格式，得修改 style template；</li>
-<li>打开 EndNote，从菜单栏里选取 <strong>Edit -> Output Styles -> Open Style Manager</strong></li>
-<li>找到并勾选第一步中的 BibTeX_Export，关闭该窗口</li>
-<li>从菜单栏中 <strong>Edit -> Output Styles</strong> 选刚增加的 IEEETrans_BibTeX_Export</li>
-<li>编辑条目：双击需要引用的参考资料，在 Label 一栏里填一个唯一标识符。我的 label 命名习惯是 "第一作者姓氏（或全名）+发表年份+一个字母"。最后的字母是从a往后递增，为了区别同一作者在同一年发的不同文章。比如 Danny Li 在 2011 年发的第一篇文章，label 就是 dannyli2011a。</li>
-<li>在 EndNote 主窗口中选中所有需要引用的参考资料，菜单 <strong>File -> Export</strong>，Output Style 选 IEEETrans_BibTeX_Export，保存为一个 txt 文档到 LaTeX 的工作目录中。然后更改文件后缀名为 .bib，如 mybib.bib；</li>
+<li>前期过度自信</li>
+<li>注意力太容易分散</li>
+<li>手机依赖</li>
+<li>逃避英语无视英语硬伤</li>
+<li>政治复习方法有问题</li>
+<li>专业课复习方法有问题</li>
+<li>搬宿舍太晚</li>
 </ul>
 
 
-<h2>CTeX 中使用 BibTeX</h2>
+<p>总的来说，这是一段幸福的时光，对于我来说其中的辛苦其实是可以忽略不计的。「考研<strong>狗</strong>」这种自嘲我不喜欢，在考研的过程中我反而越来越发现从前的那种生活状态还真是名副其实的「大学狗」，而备考中的我却成为了一个「考研<strong>人</strong>」。我深深地厌恶自己以前晚上不睡，早上不起的作息；我也开始发自内心地不再那么喜欢睡懒觉（虽然还是有点喜欢那种感觉）、不再以睡懒觉为荣……</p>
 
-<hr />
+<h3>改变</h3>
 
-<p>建立好 .bib 文件后就可以按照常规使用 BibTeX 的方式建立文献参考了。</p>
+<p>我有多容易被<strong>改变</strong>呢？我指的是那种发自内心的，思想上的改变。</p>
 
-<ul>
-<li>编写 LaTeX 代码；</li>
-<li>在结尾前加入 BibTeX 相关代码，如</li>
-</ul>
+<p>我自己似乎得出了一个让自己不愿意承认的答案：<strong>十分容易</strong>。</p>
 
+<p>承认这一点的那一刻，我曾经有多固执地相信「我会永远这样想」、「我永远都不会……」，我就有多沮丧。</p>
 
-<div class="highlight"><pre><code class="latex"><span class="k">\bibliographystyle</span><span class="nb">{</span>plain<span class="nb">}</span>
-<span class="k">\bibliography</span><span class="nb">{</span>mybib<span class="nb">}</span> <span class="c">% mybib是Endnote导出的文件名</span>
-</code></pre></div>
+<p>暑假回学校之后就发现原来做土豆粉的那家店改做「煲仔饭」了（实际上我觉得叫盖浇饭更合适）。<em>由于没有店名，招牌就是大大的「煲仔饭」三个字加上罗列的各种类别，所以下文没有特别声明的话，「煲仔饭」均特指这家店或这家店的饭。</em></p>
 
+<p>当我第一次吃煲仔饭的时候，我的内心简直和绝命毒师第一季第七集里的 Tuco 吸了一口淡蓝色的冰毒之后拼命地喊「Tight! Tight, tight, yeah!」一模一样。九月和十月这两个月我的午饭和晚饭几乎都是在这里吃的。我非常相信，煲仔饭的好吃程度是冠绝西电的。而那段时间我最喜欢吃的非<strong>茄子鸡丁</strong>莫属，除了里面的葱与整体口味不是很搭几乎没有明显缺点，逢人必推荐煲仔饭的茄子鸡丁，直到十一月的一个上午，那天我睡过了头，上午就没去 C 楼了，11点直接去吃煲仔饭，因为那时人还不多，我点了份茄子鸡丁，而当我接过饭，用勺子拌好了一小块区域，放进嘴里后，我之前对它的种种好感却荡然无存，我只感到<strong>难吃</strong>、<strong>太难吃</strong>，我要吐了……之后的两个星期我再也没有想吃过茄子鸡丁。</p>
 
-<ul>
-<li>正文中需要引用的地方就可以加入</li>
-</ul>
+<p>我非常的不能理解，为什么会产生这样的变化。厨师没变，材料没变，做法也没变，同伴也没有表示最近的茄子鸡丁有变化，那只能是我变了。我的哪里变了？大脑以外的部分：味蕾（生理上的）？还是大脑控制味觉的部分（精神上的）？我说不出个所以然，倾向于认为是精神上的。但是结果是明确的，基本上这段时间可以说是<strong>我由茄子鸡丁的脑残粉变成了它的无脑黑</strong>。</p>
 
+<p>这绝不是我第一次发生这样的转变，但注意到自己的这种转变，我感到震惊而恐惧。</p>
 
-<div class="highlight"><pre><code class="latex"><span class="k">\cite</span><span class="nb">{</span>dannyli2011a<span class="nb">}</span> <span class="c">% dannyli2011a 是之前在Endnote 中设置的 label</span>
-</code></pre></div>
+<p>初三的时候，隔壁教室有一群大人在考试，下课的时候我从前面往里面看，我发现这些「考生」们竟在堂而皇之、明目张胆地抄袭，我非常气愤，这时王金榜正好也在走廊，我告诉王老师：他们在抄袭！王老师却告诉我：这是可以理解的，这个考试的目的只是让他们知道、记住那些内容。我当时完全不能接受，我现在却可以理解了。</p>
 
+<p>小时候我的眼中除了好人就是坏人；现在我眼中好人与坏人区别却没有那么绝对了。我不知道这是不是就意味着天真的消失、变成熟。</p>
 
-<h3>References</h3>
+<h3>记忆碎片</h3>
 
-<ul>
-<li>Bevan S. Weir, <a href="http://www.rhizobia.co.nz/latex/convert.html">Step-by-step guide to using EndNote with LaTeX and BibTeX</a></li>
-</ul>
+<p>自习走神的时候脑中总是容易突然冒出一些很久之前的记忆碎片，不知道是不是处于这个状态的时候大脑活跃的区域与长期记忆存放区域相同。</p>
 
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>我所用的 Google Chrome 扩展插件</title>
-      <link href="http://dannyli.net/notes/my-google-chrome-extensions/"/>
-      <pubDate>2011-10-23T22:15:59+08:00</pubDate>
-      <author>Danny Li</author>
-      <guid>http://dannyli.net/notes/my-google-chrome-extensions</guid>
-      <content:encoded><![CDATA[<p>全面转向 Google Chrome 后，一个明显的好处就是由于内建的书签同步（已经支持设置、搜索引擎同步），高效的搜索等功能可以明显减少插件的数量。下面是我常用的 Chrome 扩展插件 (extensions)。</p>
+<p>大部分时候我就笑了笑然后回过神继续复习了。不过也有一个我顺手记了下来：</p>
 
-<h3>必装</h3>
+<p>应该是二年级，我与周杉是同桌。至今，我脑中她最深的形象还是那时她带着钢牙，眼睛也有一只近视了，带着平光眼镜，用一块蓝色的布包在眼镜上把那只近视的眼睛挡着。另一方面，我的「细爷（小姑）」有一天教我唱歌，并告诉我我挺有音乐细胞的。此为背景。</p>
 
-<hr />
+<p>然后第二天在语文课上我和周杉就开始聊我和她有没有音乐细胞的问题，我感觉整个聊天过程应该是欢乐而愉快的。但也不出意外地被老师点起来了，感觉江船老师那时还是刚毕业不久的。她有点生气：「李昌、周杉，你们在聊什么呢？！」我也挺老实的（我一直都挺老实的），弱弱地说：「我们在聊音乐细胞。」</p>
 
-<ul>
-<li><a href="https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb">Adblock Plus</a> 屏蔽网页广告。</li>
-<li><a href="https://chrome.google.com/webstore/detail/dpplabbmogkhghncfbfdeeokoefdjegm">Proxy SwitchySharp</a> 代理软件，配合 SSH 使用。不细说。</li>
-</ul>
+<p>随之而来的是哄堂大笑。</p>
 
+<p>其实以之为线索可以引出好多好多的回忆：我小学的第一个同桌倪容、把 CD 机带到班上来让我羡慕不已然后二年级就转走了的陶也、靠墙的时候坐在我前面的经常被老师叫成「杨舒龚」的<strong>杨舒龑(yǎn)</strong>（当然，我们一直也没念对——我们都念 yán）坐在我后面一直令我恐惧而厌恶的张东、同桌母狮子彭若菡、同桌四眼仔曹锐、同桌胡珊……我有一次想起来我曾经到熊魏超家吃过一次饭，其实数起来我小学时去过好多同学家吃饭（⊙﹏⊙!有点不好意思数出来）；还有一次上语文课（怎么又是语文课？）坐第一排玩乐高小车被徐鑫徐老师抓现行，老师大怒，命我去教室外站着听课，几分钟后孔尤龙也过来一同罚站了；还有放学被胡老师留下了趴在讲台（脚踩的那个）上写作业的经历，同学们从我身旁走出教室的那个画面我至今印象深刻；还有放学后我坐在第一排抄周瑞的作业，胡老师走了又回来了，看到我这么认真刻苦变得很慈祥地走了过来，刚想表扬我学习态度变好了，却看见旁边还有一本作业……结果是仅是我受罚、还有周瑞、王成、周祠焱；还有学前班玩的「传染病」的游戏，我那时候是真的很当真的。</p>
 
-<h3>选装</h3>
+<h3>入戏</h3>
 
-<hr />
+<p>我曾经对自己的看法是：一个很无情的人。因为我总是觉得自己对身边的人很冷漠，很少去关心他人。当然，这一方面我也在有意识的改。另一方面，我又有了新的认识，我惊异于自己看电视剧看电影看动漫时的入戏。</p>
 
-<ul>
-<li><a href="https://chrome.google.com/webstore/detail/fnfnbeppfinmnjnjhedifcfllpcfgeea">IE Tab Multi</a> 有些网页只支持 IE。</li>
-<li><a href="https://chrome.google.com/webstore/detail/mihcahmgecmbnbcchbopgniflfhgnkff">Google Mail Checker</a> Gmail 新邮件提醒。</li>
-<li><a href="https://chrome.google.com/webstore/detail/bmagokdooijbeehmkpknfglimnifench">Firebug Lite</a> 网页调试，Firefox 上神器的移植版本。</li>
-<li><a href="https://chrome.google.com/webstore/detail/nlbjncdgjeocebhnmkbbbdekmmmcbfjd">RSS Subscription Extension</a> 提供 RSS 订阅按钮。</li>
-<li><a href="https://chrome.google.com/webstore/detail/gmpllenfapkfpdkahamlbmbichihpmmg">迅雷、快车、旋风专用链自动破解</a> 破解 thunder/flashget/qqdl 链接，方便下载。</li>
-<li><a href="https://chrome.google.com/webstore/detail/dbpojpfdiliekbbiplijcphappgcgjfn">Flag for Chrome</a> 显示网页信息包括服务器 IP、所在国家、PageRank 等等。</li>
-<li><a href="https://chrome.google.com/webstore/detail/mfjkgbjaikamkkojmakjclmkianficch">Download Assistant</a> 用来选择默认的下载器。</li>
-<li><a href="https://chrome.google.com/webstore/detail/cpngackimfmofbokmjmljamhdncknpmg">Screen Capture</a> 网页截屏。</li>
-<li><a href="https://chrome.google.com/webstore/detail/hhinaapppaileiechjoiifaancjggfjm">Last.fm Scrobbler</a> 可以记录你在视频网站看 MV 的歌曲信息。</li>
-<li><a href="https://chrome.google.com/webstore/detail/hokfcbmfpgeajcgkaeigohghnkhjmcbj">YouTube Downloader: MP3 / HD Video</a> 下载 Youtube 视频。</li>
-</ul>
+<p>与李辉、孟伟、高强交流之后我觉得我的确要比他们更容易投入进那个构造的世界观里去，特别是影片结束之后，有一种很强烈的失落感，有时候还是不想从那个世界观里面出来。这应该也是我看影视一般不快进的原因吧。回想起来，我早就可以注意到这一点。我小时候看中央台放奥特曼就是这样的，奥特曼放完之后我会向我妈撒泼，哭着喊着要我妈打电话到中央电视台叫他们再放几集。</p>
 
+<p>我想我是一个理想观众。</p>
 
-<p>现在缺少的几个插件包括：</p>
+<h3>被遗忘的教导</h3>
 
-<ul>
-<li>检测网络媒体文件工具（Flashgot）</li>
-<li>下载加速工具（DownThemAll）</li>
-<li><del>Twitter 工具（Echofon）</del></li>
-<li><del>搜索引擎备份同步工具</del></li>
-</ul>
+<p>在我手机的记事本里，有一些大一时就记下的话，至今仍觉得非常有道理，如果能听得进去，应该是受益匪浅的。</p>
 
+<p><strong>这是施建章老师在<code>计算机文化基础</code>课上的教导</strong></p>
 
-<p>由于 Chrome 不是开源软件，Chrome 版本的 Flashgot 和 DownThemAll 无法实现 Firefox 上的诸多强大功能。这也是我有时还在使用 Firefox 的原因。另外，插件太多会导致 Chrome 启动速度减慢，这也是值得注意的。</p>
+<blockquote><ol>
+<li>在大学四年，主动向老师寻求帮助、寻求方向，会有很大收获的。老师是乐意帮助你的，但他们不会主动帮助你。</li>
+<li>为什么我们总是对别人学的、没学的有兴趣，对自己现在学的却不感兴趣，因为我们不知道学了是去干什么。</li>
+<li>你以后会有痛入骨髓的体会：易会难精。</li>
+<li>软件的学习还应以「任务」为目标带动学习！</li>
+<li>学习的本质是「学习能力」的培养；体育的本意是通过运动锻炼来健全人的人格。</li>
+<li>学习的方式有两种：<br/>
+1)厚积薄发：大学四年主要是这种方式学习，你需要沉下来、耐住寂寞，在这四年积累自己。<br/>
+2)即学即用：以任务带动学习。</li>
+</ol>
+</blockquote>
+
+<h3>没有结束</h3>
+
+<p>不管怎么说，过去都过去了。迎接未来的挑战，我在心态上已准备就绪。</p>
 ]]></content:encoded>
     </item>
     
