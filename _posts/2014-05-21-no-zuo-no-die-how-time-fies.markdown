@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "No Zuo No Die How Time Fies!"
-date:   2014-05-21 04:23:27
+date:   2014-05-21
 categories: nonsense
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "记第一次海淘"
-date: 2014-05-05 20:42:06 
+date: 2014-05-05 
 comments: true
 categories: lifestyle
 tag: 
