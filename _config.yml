@@ -5,7 +5,7 @@ author: darkkate
 highlighter: pygments # pygments: true
 safe: true
 paginate: 16
-timezone: Asia/Shanghai
+# timezone: Asia/Shanghai
 
 rdiscount:
   extensions:
