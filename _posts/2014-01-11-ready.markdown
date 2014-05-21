@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "没有结束"
-date: 2014-01-11 21:08:00 +0800
+date: 2014-01-11 21:08:00
 comments: true
 categories: Nonsense
 tag: 总结
