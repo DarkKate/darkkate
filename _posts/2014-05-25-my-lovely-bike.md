@@ -1,3 +1,11 @@
+<<<<<<< HEAD:_posts/2014-05-25-my-lovely-bike.md
+=======
+---
+layout: post
+title:  "自行车卖掉了"
+date:   2014-05-25
+categories: nonsense
+>>>>>>> 8442337dcfc29520c03919de52926e35b7cc3db5:_posts/2014-05-25-my-lovely-bike.markdown
 ---
 layout: post
 title: "自行车卖掉了"
