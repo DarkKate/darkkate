@@ -3,7 +3,7 @@ layout: post
 title: "没有结束"
 date: 2014-01-11
 comments: true
-categories: Nonsense
+categories: nonsense
 tag: 总结
 ---
 直到回家之前，我还是有一种把这几个月的一些零碎的认识、想法整理一下的强烈的意愿。
