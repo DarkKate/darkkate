@@ -1,3 +1,4 @@
+encoding: utf-8
 markdown: rdiscount
 permalink: /:year/:month/:day/:title/
 url: http://www.darkkate.com
