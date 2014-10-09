@@ -1,0 +1,10 @@
+---
+layout: post
+title: "shut up and take my money"
+date: 2014-10-09 
+comments: true
+categories: lifestyle
+tag: 
+  - 购物
+---
+![pic](http://www.darkkate.com/assets/images/Shut-up-and-take-my-money.jpg)
