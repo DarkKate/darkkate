@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "shut up and take my money"
+title: "SHUT UP AND TAKE MY MONEY"
 date: 2014-10-09 
 comments: true
 categories: lifestyle
