@@ -9,13 +9,18 @@ tag:
   - kramdown
 ---
 参考了这两个博客：
-[Jekyll中使用MathJax][1]
 
-[Octopress中使用Latex写数学公式][2]
+1. [Jekyll中使用MathJax][1]
+
+2. [Octopress中使用Latex写数学公式][2]
 
 在 Mathjax 的[官方文档][3]里也有对行间公式表示方法的说明，上面的第一个博客使用了 Mathjax 不太推荐的方案，即启用了`$...$`单美元符号，我可能考虑在以后去掉这一做法。
 
-示例：
+还有，我基本按照第一篇博客的方法，但发现我的`_include/`路径下并没有`header.html`文件，我就自己创建了一个，并在`_layout/post.html`里加入了`{% include header.html %}`，然后就可以显示了。
+
+不过感觉这样的做法有点怪异，过几天考虑把`header.html`里的代码放到`_include/defult.html`里面。
+
+## 示例：
 
 $$ 
 \begin{aligned} \dot{x} &= \sigma(y-x) \\ 
@@ -24,6 +29,60 @@ $$
 $$
 
 $E=mc^2$ is a inline formula
+
+### Lorentz方程 
+
+$$ 
+\begin{aligned} \dot{x} &= \sigma(y-x) \\ 
+\dot{y} &= \rho x - y - xz \\ 
+\dot{z} &= -\beta z + xy \end{aligned} 
+$$
+
+### Cauchy-Schwarz不等式 
+
+$$ 
+\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+$$
+
+### 某种诡异的叉乘公式
+
+$$
+\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} \mathbf{i} &\mathbf{j} &\mathbf{k} \\ 
+\frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\ 
+\frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0 \end{vmatrix} 
+$$
+
+### 二项概率分布(抛$n$次硬币出现$k$次头的概率)
+
+$$ 
+P(E)   = {n \choose k} p^k (1-p)^{ n-k} 
+$$
+
+### Ramanujan恒等式
+
+$$ 
+\frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} 
+= 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}} 
+    {1+\frac{e^{-8\pi}} {1+\ldots} } } } 
+$$
+
+### Rogers-Ramanujan恒等式
+
+$$ 
+1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots =
+\prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
+    \quad\quad \text{for $|q|<1$} 
+$$
+
+### Maxwell方程
+
+$$
+\begin{aligned} \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \\   
+\nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\ 
+\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\ 
+\nabla \cdot \vec{\mathbf{B}} & = 0 \end{aligned} 
+$$
+
 
 [1]: http://www.pkuwwt.tk/linux/2013-12-03-jekyll-using-mathjax/ "Jekyll中使用MathJax"
 [2]: http://dreamrunner.org/blog/2014/03/09/octopresszhong-shi-yong-latexxie-shu-xue-gong-shi/ "Octopress中使用Latex写数学公式"
