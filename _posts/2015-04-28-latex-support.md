@@ -16,4 +16,4 @@ $$
 \dot{z} &= -\beta z + xy \end{aligned} 
 $$
 
-$$E=mc^2$$ is a inline formula
+$E=mc^2$ is a inline formula
