@@ -83,4 +83,4 @@ $$
 [1]: http://www.pkuwwt.tk/linux/2013-12-03-jekyll-using-mathjax/ "Jekyll中使用MathJax"
 [2]: http://dreamrunner.org/blog/2014/03/09/octopresszhong-shi-yong-latexxie-shu-xue-gong-shi/ "Octopress中使用Latex写数学公式"
 [3]: http://docs.mathjax.org/en/latest/start.html
-[4]: http://chenminghua.github.io
+[4]: http://chenminhua.github.io
