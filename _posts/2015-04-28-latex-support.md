@@ -16,17 +16,13 @@ tag:
 
 在 Mathjax 的[官方文档][3]里也有对行间公式表示方法的说明，上面的第一个博客使用了 Mathjax 不太推荐的方案，即启用了`$...$`单美元符号，我可能考虑在以后去掉这一做法。
 
-还有，我基本按照第一篇博客的方法，但发现我的`_include/`路径下并没有`header.html`文件，我就自己创建了一个，并在`_layout/post.html`里加入了`{% include header.html %}`，然后就可以显示了。
+还有，我基本按照第一篇博客的方法，但发现我的`_include/`路径下并没有`header.html`文件，我就自己创建了一个，并在`_layout/post.html`里 include 了`header.html` ，然后就可以显示了。
 
 不过感觉这样的做法有点怪异，过几天考虑把`header.html`里的代码放到`_include/defult.html`里面。
 
-## 示例：
+现在主要的问题就是公式的字体太小，我的 html 知识实在不够，期待[@华仔][4]帮我改改。
 
-$$ 
-\begin{aligned} \dot{x} &= \sigma(y-x) \\ 
-\dot{y} &= \rho x - y - xz \\ 
-\dot{z} &= -\beta z + xy \end{aligned} 
-$$
+## 示例：
 
 $E=mc^2$ is a inline formula
 
@@ -87,3 +83,4 @@ $$
 [1]: http://www.pkuwwt.tk/linux/2013-12-03-jekyll-using-mathjax/ "Jekyll中使用MathJax"
 [2]: http://dreamrunner.org/blog/2014/03/09/octopresszhong-shi-yong-latexxie-shu-xue-gong-shi/ "Octopress中使用Latex写数学公式"
 [3]: http://docs.mathjax.org/en/latest/start.html
+[4]: http://chenminghua.github.io
