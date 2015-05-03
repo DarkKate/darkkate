@@ -1,6 +1,5 @@
 <!-- Duoshuo Comment BEGIN -->
-	<div class="ds-thread"></div>
-<div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ page.title }}"></div>
+<div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-url="{{ page.url }}"></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"darkkate"};
 	(function() {
