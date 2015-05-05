@@ -14,17 +14,19 @@ tag:
 
 ## Tips
 
-下面想到什么写什么
+下面想到什么写什么，以后也会慢慢补充。
 
-1. 在独立公式中插入汉字：`\mbox{汉字}`，`\text{汉字}`
+1. 在独立公式中插入汉字：mbox{汉字}，text{汉字}
 
-2. Tex Live 的 CTeX 模式的默认格式文件在这个目录：`D:\texlive\2013\texmf-dist\tex\latex\ctex\cfg\ctexcap.cfg`
+2. Tex Live 的 CTeX 模式的默认格式文件在这个目录：D:\texlive\2013\texmf-dist\tex\latex\ctex\cfg\ctexcap.cfg
 
-3. 国标引文格式：`\bibliographystyle{gbt7714-2005}`
+5. [Jekyll中使用MathJax][1]
 
-4. 大括号分类图，使用 case 环境。`\smash[],t,b` 分别指忽略盒子的高度，深度
+6. 中文排版最简单方案，安装 TeX Live 使用 CTeX + XeLaTeX：\documentclass{ctexart}
 
-例如：
+3. [国标引文格式][2]：\bibliographystyle{gbt7714-2005}
+
+4. 大括号分类图，使用 case 环境。\smash[],t,b 分别指忽略盒子的高度，深度。例如：
 
 $$
 \text{锂离子电池电解质}
@@ -47,9 +49,6 @@ $$
 \end{cases}
 $$
 
-5. [Jekyll中使用MathJax][1]
-
-6. 中文排版最简单方案，安装 TeX Live 使用 CTeX + XeLaTeX：`\documentclass{ctexart}`
 
 [1]: http://www.pkuwwt.tk/linux/2013-12-03-jekyll-using-mathjax/
-
+[2]: https://github.com/Haixing-Hu/GBT7714-2005-BibTeX-Style
