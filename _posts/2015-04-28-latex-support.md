@@ -22,6 +22,8 @@ tag:
 
 现在主要的问题就是公式的字体太小，我的 html 知识实在不够，期待[@华仔][4]帮我改改。
 
+自己审查元素看了一下，发现对于行间公式的显示，*我的电脑*的浏览器上，会出现一个`element.style`，并有`font-size:50%`；行内公式也有`element.style`，但却是`font-size:116%`，我没有在 jekyll 的 css 文件里找到相应的代码。更奇怪的是，在华仔的电脑[^1]上的行间公式却是`font-size:106%`。没搞懂。
+
 ## 示例：
 
 $$E=mc^2$$ is a inline formula
@@ -79,6 +81,7 @@ $$
 \nabla \cdot \vec{\mathbf{B}} & = 0 \end{aligned} 
 $$
 
+[^1]: MacBook Pro, Chrome
 
 [1]: http://www.pkuwwt.tk/linux/2013-12-03-jekyll-using-mathjax/ "Jekyll中使用MathJax"
 [2]: http://dreamrunner.org/blog/2014/03/09/octopresszhong-shi-yong-latexxie-shu-xue-gong-shi/ "Octopress中使用Latex写数学公式"
