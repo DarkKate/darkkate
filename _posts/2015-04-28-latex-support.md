@@ -24,7 +24,7 @@ tag:
 
 ## 示例：
 
-$E=mc^2$ is a inline formula
+$$E=mc^2$$ is a inline formula
 
 ### Lorentz方程 
 
@@ -48,7 +48,7 @@ $$
 \frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0 \end{vmatrix} 
 $$
 
-### 二项概率分布(抛$n$次硬币出现$k$次头的概率)
+### 二项概率分布(抛$$n$$次硬币出现$$k$$次头的概率)
 
 $$ 
 P(E)   = {n \choose k} p^k (1-p)^{ n-k} 
