@@ -20,10 +20,32 @@ tag:
 
 2. Tex Live 的 CTeX 模式的默认格式文件在这个目录：`D:\texlive\2013\texmf-dist\tex\latex\ctex\cfg\ctexcap.cfg`
 
-3. `\bibliographystyle{gbt7714-2005}`
+3. 国标引文格式：`\bibliographystyle{gbt7714-2005}`
 
-4. 大括号分类图，使用 case 环境。
-\smash[],t,b 分别指忽略盒子的高度，深度
+4. 大括号分类图，使用 case 环境。`\smash[],t,b` 分别指忽略盒子的高度，深度
+
+例如：
+
+$$
+\text{锂离子电池电解质}
+\begin{cases}
+  \strut\smash[t]{\text{液体电解质}
+    \begin{cases}
+      \text{无机液体电解质} \\
+      \text{有机液体电解质}
+    \end{cases}}\\
+  \text{固体电解质}
+    \begin{cases}
+      \text{无机固体电解质} \\
+      \strut\smash[b]{\text{有机固体电解质}
+         \begin{cases}
+         \text{纯固体聚合物电解质}\\
+         \text{胶体聚合物电解质}
+         \end{cases}}\\
+    \end{cases}\\
+  \text{熔融盐电解质}
+\end{cases}
+$$
 
 5. [Jekyll中使用MathJax][1]
 
