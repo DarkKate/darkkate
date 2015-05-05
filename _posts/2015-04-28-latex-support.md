@@ -8,6 +8,8 @@ tag:
   - LaTeX 
   - kramdown
 ---
+## 改动
+
 参考了这两个博客：
 
 1. [Jekyll中使用MathJax][1]
@@ -19,6 +21,8 @@ tag:
 还有，我基本按照第一篇博客的方法，但发现我的`_include/`路径下并没有`header.html`文件，我就自己创建了一个，并在`_layout/post.html`里 include 了`header.html` ，然后就可以显示了。
 
 不过感觉这样的做法有点怪异，过几天考虑把`header.html`里的代码放到`_include/defult.html`里面。
+
+## 问题
 
 现在主要的问题就是公式的字体太小，我的 html 知识实在不够，期待[@华仔][4]帮我改改。
 
@@ -80,6 +84,8 @@ $$
 \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\ 
 \nabla \cdot \vec{\mathbf{B}} & = 0 \end{aligned} 
 $$
+
+-----
 
 [^1]: MacBook Pro, Chrome
 
