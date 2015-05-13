@@ -7,6 +7,5 @@ categories: lifestyle
 tag: 
   - douban
 ---
-
-<script type="text/javascript" src="http://www.douban.com/service/badge/DarkKate/?selection=latest&amp;picsize=medium&amp;show=collection&amp;n=9&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script>
-
+<h2>我的豆瓣秀</h2>
+<div><script type="text/javascript" src="http://www.douban.com/service/badge/DarkKate/?selection=latest&amp;picsize=medium&amp;show=collection&amp;n=9&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=3"></script></div>
