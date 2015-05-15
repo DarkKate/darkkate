@@ -21,14 +21,15 @@ tag:
 
 #### 我最近看过的
 
-~~~ javascript
+{% highlight javascript %}
 <script type="text/javascript" src="http://www.douban.com/service/badge/DarkKate/?selection=latest&amp;picsize=medium&amp;hideself=on&amp;show=collection&amp;n=8&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=4"></script>
-~~~
+{% endhighlight %}
+
 #### 历史随机列表
 
-~~~ javascript
+{% highlight javascript %}
 <script type="text/javascript" src="http://www.douban.com/service/badge/DarkKate/?selection=random&amp;picsize=medium&amp;hideself=on&amp;show=collection&amp;n=8&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=4"></script>
-~~~
+{% endhighlight %}
 -----
 
 目前发现了一个很要命的问题：**图片显示不全！**
@@ -42,7 +43,7 @@ tag:
 
 这个文件代码如下：
 
-~~~ html
+{% highlight html %}
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh-cn">
 
@@ -50,6 +51,6 @@ tag:
 
 <script type="text/javascript" src="http://www.douban.com/service/badge/DarkKate/?selection=random&amp;picsize=medium&amp;hideself=on&amp;show=collection&amp;n=8&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=4"></script>
 </html>
-~~~
+{% endhighlight %}
 
 有点不懂，因为我前端知识很匮乏，不知道这个情况是不是因为 Jekyll 是静态网站的关系。
