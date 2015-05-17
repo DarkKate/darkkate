@@ -7,8 +7,210 @@
     <title>darkkate</title>
     <link href="http://www.darkkate.com/feed/" rel="self" />
     <link href="http://webfrogs.github.com" />
-    <lastBuildDate>2014-11-18T07:57:36+00:00</lastBuildDate>
+    <lastBuildDate>2015-05-17T10:42:53+00:00</lastBuildDate>
     <webMaster>ccf.developer@gmail.com</webMaster>
+    
+    <item>
+      <title>我的豆瓣秀</title>
+      <link href="http://www.darkkate.com/2015/05/13/my-douban-show/"/>
+      <pubDate>2015-05-13T00:00:00+00:00</pubDate>
+      <author>darkkate</author>
+      <guid>http://www.darkkate.com/2015/05/13/my-douban-show</guid>
+      <content:encoded><![CDATA[<h3 id="section">我最近看过的</h3>
+
+<script type="text/javascript" src="http://www.douban.com/service/badge/DarkKate/?selection=latest&amp;picsize=medium&amp;hideself=on&amp;show=collection&amp;n=8&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=4"></script>
+
+<h3 id="section-1">历史随机列表</h3>
+
+<script type="text/javascript" src="http://www.douban.com/service/badge/DarkKate/?selection=random&amp;picsize=medium&amp;hideself=on&amp;show=collection&amp;n=8&amp;hidelogo=on&amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;columns=4"></script>
+
+<p><em>其实只是突然想起来豆瓣提供了这么一个功能，想在自己的博客里测试一下，以后挂在 About 页面应该比较好。</em></p>
+
+<p>实际上就是在页面里放了一段 JavaScript 代码：</p>
+
+<h4 id="section-2">我最近看过的</h4>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;http://www.douban.com/service/badge/DarkKate/?selection=latest&amp;amp;picsize=medium&amp;amp;hideself=on&amp;amp;show=collection&amp;amp;n=8&amp;amp;hidelogo=on&amp;amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;amp;columns=4&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span></code></pre></div>
+
+<h4 id="section-3">历史随机列表</h4>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;http://www.douban.com/service/badge/DarkKate/?selection=random&amp;amp;picsize=medium&amp;amp;hideself=on&amp;amp;show=collection&amp;amp;n=8&amp;amp;hidelogo=on&amp;amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;amp;columns=4&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span></code></pre></div>
+
+<hr />
+
+<p>目前发现了一个很要命的问题：<strong>图片显示不全！</strong></p>
+
+<p>审查元素后发现一下症状：</p>
+
+<ol>
+  <li>
+    <p>文件名以 s 开头的图片（书籍、剧集、专辑）每次都能显示，而以 p 开头的图片（电影）则出现 403 (forbidden) 状态码。</p>
+  </li>
+  <li>
+    <p>我把这个 js 代码写了一个 html 文件，在本地可以<strong>完美显示</strong>，上传到 GitHub上去之后，就出现了上述问题。</p>
+  </li>
+</ol>
+
+<p>这个文件代码如下：</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.w3.org/1999/xhtml&quot;</span> <span class="na">xml:lang=</span><span class="s">&quot;zh&quot;</span> <span class="na">lang=</span><span class="s">&quot;zh-cn&quot;</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;h2&gt;</span>Random List<span class="nt">&lt;/h2&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;http://www.douban.com/service/badge/DarkKate/?selection=random&amp;amp;picsize=medium&amp;amp;hideself=on&amp;amp;show=collection&amp;amp;n=8&amp;amp;hidelogo=on&amp;amp;cat=drama%7Cmovie%7Cbook%7Cmusic&amp;amp;columns=4&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></div>
+
+<p>有点不懂，因为我前端知识很匮乏，不知道这个情况是不是因为 Jekyll 是静态网站的关系。</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>LaTeX Tips</title>
+      <link href="http://www.darkkate.com/2015/05/05/latex-tips/"/>
+      <pubDate>2015-05-05T00:00:00+00:00</pubDate>
+      <author>darkkate</author>
+      <guid>http://www.darkkate.com/2015/05/05/latex-tips</guid>
+      <content:encoded><![CDATA[<h2 id="section">备忘</h2>
+
+<p>写这个主要就是一个备忘的作用，LaTeX 的细节很多，一段时间没用就很容易忘了。上个月就吃到了这个苦头，原来看过的东西没做一个记录，忘了就得重新再查资料，然后在茫茫的信息海洋中寻找我需要的那个知识点，当然有一些问题在网络上也有人问，可以 google 到，但有的细节还是只有 LaTeX 书籍或文档里才有，还有一个问题就是使用 LaTeX 进行中文排版的方案随着技术的发展出现了好几个解决方案，有时候真的挺晕的。</p>
+
+<h2 id="tips">Tips</h2>
+
+<p>下面想到什么写什么，以后也会慢慢补充。</p>
+
+<ol>
+  <li>
+    <p>在独立公式中插入汉字：mbox{汉字}，text{汉字}</p>
+  </li>
+  <li>
+    <p>Tex Live 的 CTeX 模式的默认格式文件在这个目录：D:\texlive\2013\texmf-dist\tex\latex\ctex\cfg\ctexcap.cfg</p>
+  </li>
+  <li>
+    <p><a href="http://www.pkuwwt.tk/linux/2013-12-03-jekyll-using-mathjax/">Jekyll中使用MathJax</a></p>
+  </li>
+  <li>
+    <p>中文排版最简单方案，安装 TeX Live 使用 CTeX + XeLaTeX：\documentclass{ctexart}</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/Haixing-Hu/GBT7714-2005-BibTeX-Style">国标引文格式</a>：\bibliographystyle{gbt7714-2005}</p>
+  </li>
+  <li>
+    <p>大括号分类图，使用 case 环境。\smash[],t,b 分别指忽略盒子的高度，深度。例如：</p>
+  </li>
+</ol>
+
+<script type="math/tex; mode=display">\text{锂离子电池电解质}
+\begin{cases}
+  \strut\smash[t]{\text{液体电解质}
+    \begin{cases}
+      \text{无机液体电解质} \\
+      \text{有机液体电解质}
+    \end{cases}}\\
+  \text{固体电解质}
+    \begin{cases}
+      \text{无机固体电解质} \\
+      \strut\smash[b]{\text{有机固体电解质}
+         \begin{cases}
+         \text{纯固体聚合物电解质}\\
+         \text{胶体聚合物电解质}
+         \end{cases}}\\
+    \end{cases}\\
+  \text{熔融盐电解质}
+\end{cases}</script>
+
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>加入 LaTeX 公式支持</title>
+      <link href="http://www.darkkate.com/2015/04/28/latex-support/"/>
+      <pubDate>2015-04-28T00:00:00+00:00</pubDate>
+      <author>darkkate</author>
+      <guid>http://www.darkkate.com/2015/04/28/latex-support</guid>
+      <content:encoded><![CDATA[<h2 id="section">改动</h2>
+
+<p>参考了这两个博客：</p>
+
+<ol>
+  <li>
+    <p><a href="http://www.pkuwwt.tk/linux/2013-12-03-jekyll-using-mathjax/" title="Jekyll中使用MathJax">Jekyll中使用MathJax</a></p>
+  </li>
+  <li>
+    <p><a href="http://dreamrunner.org/blog/2014/03/09/octopresszhong-shi-yong-latexxie-shu-xue-gong-shi/" title="Octopress中使用Latex写数学公式">Octopress中使用Latex写数学公式</a></p>
+  </li>
+</ol>
+
+<p>在 Mathjax 的<a href="http://docs.mathjax.org/en/latest/start.html">官方文档</a>里也有对行间公式表示方法的说明，上面的第一个博客使用了 Mathjax 不太推荐的方案，即启用了<code>$...$</code>单美元符号，我可能考虑在以后去掉这一做法。</p>
+
+<p>还有，我基本按照第一篇博客的方法，但发现我的<code>_include/</code>路径下并没有<code>header.html</code>文件，我就自己创建了一个，并在<code>_layout/post.html</code>里 include 了<code>header.html</code> ，然后就可以显示了。</p>
+
+<p>不过感觉这样的做法有点怪异，过几天考虑把<code>header.html</code>里的代码放到<code>_include/defult.html</code>里面。</p>
+
+<h2 id="section-1">问题</h2>
+
+<p>现在主要的问题就是公式的字体太小，我的 html 知识实在不够，自己审查元素看了一下，发现对于行间公式的显示，<em>我的电脑</em>的浏览器上，会出现一个<code>element.style</code>，并有<code>font-size:50%</code>；行内公式也有<code>element.style</code>，但却是<code>font-size:116%</code>，我没有在 jekyll 的 css 文件里找到相应的代码。更奇怪的是，在华仔的电脑<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>上的行间公式却是<code>font-size:106%</code>。没搞懂。</p>
+
+<p>还有一个问题就是公式里的字母和符号莫名其妙成为了绿色而数字是黑色，我看其他人的博客一般就都是黑色。我有点怀疑是<code>highlight.css</code>文件造成的，但是还没有仔细看其代码。</p>
+
+<h2 id="section-2">示例：</h2>
+
+<p><script type="math/tex">E=mc^2</script> is a inline formula</p>
+
+<h3 id="lorentz">Lorentz方程</h3>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned} \dot{x} &= \sigma(y-x) \\ 
+\dot{y} &= \rho x - y - xz \\ 
+\dot{z} &= -\beta z + xy \end{aligned} %]]></script>
+
+<h3 id="cauchy-schwarz">Cauchy-Schwarz不等式</h3>
+
+<script type="math/tex; mode=display">\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)</script>
+
+<h3 id="section-3">某种诡异的叉乘公式</h3>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} \mathbf{i} &\mathbf{j} &\mathbf{k} \\ 
+\frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\ 
+\frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0 \end{vmatrix} %]]></script>
+
+<h3 id="nk">二项概率分布(抛<script type="math/tex">n</script>次硬币出现<script type="math/tex">k</script>次头的概率)</h3>
+
+<script type="math/tex; mode=display">P(E)   = {n \choose k} p^k (1-p)^{ n-k}</script>
+
+<h3 id="ramanujan">Ramanujan恒等式</h3>
+
+<script type="math/tex; mode=display">\frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} 
+= 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}} 
+    {1+\frac{e^{-8\pi}} {1+\ldots} } } }</script>
+
+<h3 id="rogers-ramanujan">Rogers-Ramanujan恒等式</h3>
+
+<script type="math/tex; mode=display">% <![CDATA[
+1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots =
+\prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
+    \quad\quad \text{for $|q|<1$} %]]></script>
+
+<h3 id="maxwell">Maxwell方程</h3>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned} \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \\   
+\nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\ 
+\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\ 
+\nabla \cdot \vec{\mathbf{B}} & = 0 \end{aligned} %]]></script>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>MacBook Pro, Chrome <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+]]></content:encoded>
+    </item>
     
     <item>
       <title>SHUT UP AND TAKE MY MONEY</title>
@@ -16,7 +218,7 @@
       <pubDate>2014-10-09T00:00:00+00:00</pubDate>
       <author>darkkate</author>
       <guid>http://www.darkkate.com/2014/10/09/shut-up-and-take-my-money</guid>
-      <content:encoded><![CDATA[<p><img src="http://www.darkkate.com/assets/images/Shut-up-and-take-my-money.jpg" alt="pic" /></p>
+      <content:encoded><![CDATA[<p><img src="/assets/images/Shut-up-and-take-my-money.jpg" alt="pic" /></p>
 ]]></content:encoded>
     </item>
     
@@ -44,13 +246,11 @@
       <pubDate>2014-05-21T00:00:00+00:00</pubDate>
       <author>darkkate</author>
       <guid>http://www.darkkate.com/2014/05/21/no-zuo-no-die-how-time-fies</guid>
-      <content:encoded><![CDATA[<p><em>又到了批判自己浪费时间的日常了。</em></p>
+      <content:encoded><![CDATA[<p><em>又到了批判自己浪费时间的日常了。</em>
+## D-Day
+事情是这样的。</p>
 
-<h2>D-Day</h2>
-
-<p>事情是这样的。</p>
-
-<p>一周之前，貌似是一个慵懒的上午，我躺在床上，然后不知怎么脑中冒出了<strong>固态硬盘</strong>这个词。然后我立马起床看了一个关于笔记本电脑利用光驱位安装固态硬盘的帖子<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>，巧的是我的笔电也刚好是奶牛的 NV47H 系列！内心YY了一下 SSD 让年迈的电脑焕发新生的情景，那画面实在太美。</p>
+<p>一周之前，貌似是一个慵懒的上午，我躺在床上，然后不知怎么脑中冒出了<strong>固态硬盘</strong>这个词。然后我立马起床看了一个关于笔记本电脑利用光驱位安装固态硬盘的帖子<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>，巧的是我的笔电也刚好是奶牛的 NV47H 系列！内心YY了一下 SSD 让年迈的电脑焕发新生的情景，那画面实在太美。</p>
 
 <p>就这样，我又花了大半个下午看了搜索引擎上大部分有关升级 SSD 的帖子，对双硬盘重装系统过程中可能出现的种种问题都有了了解，并且用 CPU-Z 确认了自己是 HM65 的主板，理论上是支持 SATA 3.0 的，但是当时我买电脑时，HM65 芯片组发生了 B2 步进事件——一部分 HM65 主板的 SATA 接口有问题= =。我当时也确认过自己的不是那一批，但是还是抱着保险的心态又用 AIDA64 确认了一下，我这个主板的确是 B3 步进的，没有那个问题了。</p>
 
@@ -64,80 +264,75 @@
 
 <p>我脑残地在淘宝上找了一家店下了单。后果是第二天中午京东就把固态硬盘送到了，而我的光驱位硬盘托架居然还没有发货！！！</p>
 
-<h2>D+1</h2>
+<h2 id="d1">D+1</h2>
 
 <p>我又在睿思交易板块搜索，居然还真有出托架的。怒退货。联系了睿思上那哥们儿，一切都谈妥了，但是……他是个学霸！！他说他不在宿舍，且要11点才回去，第二天交易可否，我很不情愿地答应了第二天交易。</p>
 
 <p>然后我11点的时候还是忍不住了，骑车到他们宿舍楼下，把东西拿到了手。我其实一拿到就有点不满意——本来应该有两颗螺丝来固定硬盘，但是他这个只有一个能旋进去。我先用了，重装系统之后还真遇到了那个帖子里提到的<code>bootmgr is missing</code>，改一下 BIOS 里的启动顺序就没问题了。这里我又作死地安装的是 Win 8.1 为后来发生的坑爹事情埋下了伏笔。</p>
 
-<h2>D+2</h2>
+<h2 id="d2">D+2</h2>
 
 <p>第三天，4K对齐是没什么问题的，装驱动也还好，流氓软件是最让人头疼的，安装驱动精灵，它还给我送了一个百度杀毒！！这我能忍？飞鸟尽，良弓藏；狡兔死，走狗烹——驱动装完，两个都卸载。折腾了好长时间的分区问题，然后系统又一直报警，说我机械硬盘有问题，有数据丢失风险。去他的！我用 DiskGenius 扫了一下午，扫出了一个坏道，然后我有扫了一次，又没扫出来！！！</p>
 
 <p>然后是安装各种软件，我在第一天就列了一个单子：</p>
 
 <ul>
-<li>各种驱动</li>
-<li>Rainmeter</li>
-<li>Fences 2</li>
-<li>锐捷</li>
-<li><p>生产力</p>
-
-<ul>
-<li>Photoshop</li>
-<li>Evernote</li>
-<li>Vim</li>
-<li>matlab</li>
-<li>Git, Github</li>
-<li>Keil uVision 4</li>
-<li>NoteExpress 2</li>
-<li>CTeX</li>
-<li>MS Office</li>
-<li>Octopress</li>
+  <li>各种驱动</li>
+  <li>Rainmeter</li>
+  <li>Fences 2</li>
+  <li>锐捷</li>
+  <li>生产力
+    <ul>
+      <li>Photoshop</li>
+      <li>Evernote</li>
+      <li>Vim</li>
+      <li>matlab</li>
+      <li>Git, Github</li>
+      <li>Keil uVision 4</li>
+      <li>NoteExpress 2</li>
+      <li>CTeX</li>
+      <li>MS Office</li>
+      <li>Octopress</li>
+    </ul>
+  </li>
+  <li>General Tools
+    <ul>
+      <li>uTorrent</li>
+      <li>Chrome</li>
+      <li>完美解码</li>
+      <li>迅雷7</li>
+      <li>有道</li>
+      <li>iTunes</li>
+      <li>百度云</li>
+      <li>Dropbox</li>
+      <li>网易云音乐</li>
+      <li>Picasa 3</li>
+      <li>PowerDVD</li>
+      <li>goagent</li>
+      <li>Everthing</li>
+      <li>Adobe Reader</li>
+      <li>DAEMON</li>
+      <li>7-Zip</li>
+    </ul>
+  </li>
+  <li>IM
+    <ul>
+      <li>QQ</li>
+    </ul>
+  </li>
+  <li>Games
+    <ul>
+      <li>炉石传说</li>
+      <li>文明 5</li>
+    </ul>
+  </li>
 </ul>
-</li>
-<li><p>General Tools</p>
-
-<ul>
-<li>uTorrent</li>
-<li>Chrome</li>
-<li>完美解码</li>
-<li>迅雷7</li>
-<li>有道</li>
-<li>iTunes</li>
-<li>百度云</li>
-<li>Dropbox</li>
-<li>网易云音乐</li>
-<li>Picasa 3</li>
-<li>PowerDVD</li>
-<li>goagent</li>
-<li>Everthing</li>
-<li>Adobe Reader</li>
-<li>DAEMON</li>
-<li>7-Zip</li>
-</ul>
-</li>
-<li><p>IM</p>
-
-<ul>
-<li>QQ</li>
-</ul>
-</li>
-<li><p>Games</p>
-
-<ul>
-<li>炉石传说</li>
-<li>文明 5</li>
-</ul>
-</li>
-</ul>
-
 
 <p>他们其实就在原来的机械硬盘里，只不过都是黑户，是否兼容 Win 8 也是一个只有天知道的问题，我真是手贱装 Win 8。</p>
 
 <p>我觉得少颗螺丝不放心，退了货（还是晚上11点多去），又在淘宝上买了个新的（还是之前那家店），结果到第四天下午还没发货！！我就烦躁了，联系客服也没人搭理（后来他们跟我说他们店每周六放假）。怒退款，换店。</p>
 
-<h2>D+5</h2>
+<h2 id="d5">D+5</h2>
 
 <p>又过了三天，买的光驱位硬盘托架终于到了。我第一时间装上了电脑。开机又呵呵了——<code>Invalid partition table</code>配合着黑色屏幕出现在我眼前。</p>
 
@@ -151,17 +346,16 @@
 
 <p>还不够烦。其实前面列举的那些软件我还远远没处理完呢，还有兼容性问题：Fences 2 安装之后桌面的图标无法移动了</p>
 
-<h2>D+6</h2>
-
-<h3>无力吐槽的 Octopress</h3>
+<h2 id="d6">D+6</h2>
+<p>###无力吐槽的 Octopress</p>
 
 <p>想在 Windows 下用 Octopress，你得先安装 Git, Ruby, DevKit 还有 Python.虽然我仅看了《版本控制之道——Git》的第一章，对 Ruby, Python 一无所知。这些我都忍了，设置环境变量什么的我也忍了，<code>easy_install pygments</code>的时候系统说没这个命令，我也忍了，Google 搞定。UTF-8 什么的网上文章也很多，也忍了。不过我还是对 Octopress 的工作方式不太理解，最终还是不知道怎么把我本地和 Github 上的两个完全相同的仓库关联起来。</p>
 
 <p>所以——</p>
 
-<h3>我转而投靠 Jekyll</h3>
+<h3 id="jekyll">我转而投靠 Jekyll</h3>
 
-<p>我惊讶地发现，我在之前捣鼓 Octopress 的时候已经安装了所有 Jekyll 需要的环境（其实这是废话，Octopress 本来就是基于 Jekyll 的）。抱着试一试的心态，我安装了 Jekyll，之前完全没想到，Jekyll 比 Octopress 对人友好——因为 Jekyll 就只有一个 master 分支，fork -> clone 就能用了。</p>
+<p>我惊讶地发现，我在之前捣鼓 Octopress 的时候已经安装了所有 Jekyll 需要的环境（其实这是废话，Octopress 本来就是基于 Jekyll 的）。抱着试一试的心态，我安装了 Jekyll，之前完全没想到，Jekyll 比 Octopress 对人友好——因为 Jekyll 就只有一个 master 分支，fork -&gt; clone 就能用了。</p>
 
 <p>但是，好吧，我还是捣鼓到了晚上。而且一晚上都在折腾代码块的字体，我看完了源文件里所有的 CSS 文件，死马当活马医一般地改了所有的<code>pre</code>, <code>code</code>中的<code>font-family</code>，但是在我浏览器上，那些字体还是无比丑陋的宋体。我又求刘雄看了代码，他指点了一下，还是无法改变效果。</p>
 
@@ -169,18 +363,18 @@
 
 <p>好吧，知道真相的我眼泪都快掉下来，是我的浏览器的坑爹设置导致的——Serif, Sans-Serif 还有等宽字体都设置的是宋体T_T。</p>
 
-<h2>D+7</h2>
+<h2 id="d7">D+7</h2>
 
 <p>最无聊的是我还花这么多时间把这些无聊的事记下来。
 实在是<strong>No Zuo No Die How Time Fies!</strong></p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p><a href="http://bbs.dgtle.com/thread-25208-1-1.html">『极速“奶牛”！』&mdash;Gateway NV47H笔记本实战升级SSD全记录</a><a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
 
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="http://bbs.dgtle.com/thread-25208-1-1.html">『极速“奶牛”！』—Gateway NV47H笔记本实战升级SSD全记录</a> <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 ]]></content:encoded>
     </item>
     
@@ -190,7 +384,7 @@
       <pubDate>2014-05-20T00:00:00+00:00</pubDate>
       <author>darkkate</author>
       <guid>http://www.darkkate.com/2014/05/20/welcome-to-jekyll</guid>
-      <content:encoded><![CDATA[<p>You&rsquo;ll find this post in your <code>_posts</code> directory - edit this post and re-build (or run with the <code>-w</code> switch) to see your changes!
+      <content:encoded><![CDATA[<p>You’ll find this post in your <code>_posts</code> directory - edit this post and re-build (or run with the <code>-w</code> switch) to see your changes!
 To add new posts, simply add a file in the <code>_posts</code> directory that follows the convention: YYYY-MM-DD-name-of-post.ext.</p>
 
 <p>Jekyll also offers powerful support for code snippets:</p>
@@ -201,8 +395,8 @@ To add new posts, simply add a file in the <code>_posts</code> directory that fo
 <span class="n">print_hi</span><span class="p">(</span><span class="s1">&#39;Tom&#39;</span><span class="p">)</span>
 <span class="c1">#=&gt; prints &#39;Hi, Tom&#39; to STDOUT.</span></code></pre></div>
 
+<p>Check out the <a href="http://jekyllrb.com">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>.</p>
 
-<p>Check out the <a href="http://jekyllrb.com">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll&rsquo;s GitHub repo</a>.</p>
 ]]></content:encoded>
     </item>
     
@@ -215,55 +409,47 @@ To add new posts, simply add a file in the <code>_posts</code> directory that fo
       <content:encoded><![CDATA[<p>今天（5月6日）终于完成了第一次<strong>海淘</strong>。回想从对海淘一无所知到心存疑虑再到完成交易。学到的概念还是挺多的。感觉有必要记录下来，一来长时间之后如果我又忘了一些概念，可以重新看一遍这里而不用再一次 Google 或在各种充斥着水帖的论坛里找零碎的教程；二来也希望能对海淘<strong>一无所知</strong>的朋友有所帮助。</p>
 
 <!-- more -->
-
-
 <hr />
 
-<h2>什么是<strong>海淘</strong>？</h2>
+<h2 id="section">什么是<strong>海淘</strong>？</h2>
 
 <p>我一开始最困惑的就是「海淘」这个名词。作为一个网购就意味着<strong>淘宝、亚马逊、京东</strong>的人来说，我第一次听说海淘还以为是一个网站：淘宝网的分支业务或是另一个专门贩卖海外商品的一站式网购平台。后来才知道海淘是指一类行为：从海外网购。</p>
 
 <p>另，海淘最大的缺点应该就是漫长的运输时间，如果受不了将近一个月的等待，建议还是别海淘。</p>
 
-<h2>为什么海淘？</h2>
-
-<p><img src="/assets/images/GT-2000.jpg" title="GT-2000" alt="GT-2000" /></p>
+<h2 id="section-1">为什么海淘？</h2>
+<p><img src="/assets/images/GT-2000.jpg" alt="GT-2000" title="GT-2000" /></p>
 
 <ul>
-<li><strong>便宜</strong>。如果没有与国内相比相当可观的差价，相信没人会舍近求远的。举个例子：我这次买的 <a href="http://www.6pm.com/asics-gt-2000-lime-white-red">asics GT-2000</a> 在天猫旗舰店上是<code>￥990</code>，而在 6pm.com 上是<code>$49.99</code>，折合人民币<code>￥310</code>，加上<code>$15</code>转运费，总共折合<code>￥403</code>。相当于4折了！</li>
-<li>其他原因</li>
+  <li><strong>便宜</strong>。如果没有与国内相比相当可观的差价，相信没人会舍近求远的。举个例子：我这次买的 <a href="http://www.6pm.com/asics-gt-2000-lime-white-red">asics GT-2000</a> 在天猫旗舰店上是<code>￥990</code>，而在 6pm.com 上是<code>$49.99</code>，折合人民币<code>￥310</code>，加上<code>$15</code>转运费，总共折合<code>￥403</code>。相当于4折了！</li>
+  <li>其他原因</li>
 </ul>
 
-
-<h2>怎么样海淘？</h2>
-
+<h2 id="section-2">怎么样海淘？</h2>
 <p>从逻辑上来讲其购物流程与在国内网购是类似的：</p>
 
 <ol>
-<li>买东西：从国外购物网站下单</li>
-<li>寄回来：从国外寄回国内</li>
+  <li>买东西：从国外购物网站下单</li>
+  <li>寄回来：从国外寄回国内</li>
 </ol>
-
 
 <p>但是如果具体操作其实还是有点麻烦的。麻烦的原因主要有两点：</p>
 
 <ol>
-<li>国外购物网站一般不支持支付宝和国内储蓄卡的网银。我们首先得有一张<strong>双币信用卡</strong>，才能完成支付。另，使用信用卡在国外网购是不需要密码直接就能扣钱的，所以保护好信用卡信息（信用卡账单地址，姓名，卡号，安全码，有效期限）真的很重要。在这里我要特别感谢<a href="http://sobear.me">刘雄</a>，没有刘富帅支援我信用卡我就只能望洋兴叹了。</li>
-<li>国外购物网站一般也是没法直接寄到国内地址的。我们得先找一家转运公司，先寄到转运公司在海外的仓库，再由转运公司负责运回国内。</li>
+  <li>国外购物网站一般不支持支付宝和国内储蓄卡的网银。我们首先得有一张<strong>双币信用卡</strong>，才能完成支付。另，使用信用卡在国外网购是不需要密码直接就能扣钱的，所以保护好信用卡信息（信用卡账单地址，姓名，卡号，安全码，有效期限）真的很重要。在这里我要特别感谢<a href="http://sobear.me">刘雄</a>，没有刘富帅支援我信用卡我就只能望洋兴叹了。</li>
+  <li>国外购物网站一般也是没法直接寄到国内地址的。我们得先找一家转运公司，先寄到转运公司在海外的仓库，再由转运公司负责运回国内。</li>
 </ol>
-
 
 <p>下面以我这次购物为例讲一下具体流程：</p>
 
-<h3>一、选择购物网站和转运公司，然后注册账号</h3>
+<h3 id="section-3">一、选择购物网站和转运公司，然后注册账号</h3>
 
 <ul>
-<li>我想买的是鞋，<strong><a href="http://www.6pm.com" title="6pm">6pm</a></strong> 的折扣是相当给力的。所以选择它。</li>
-<li>选择转运公司无非看三点：价格、速度、服务水平。网上的经验帖都指出转运公司的选择是非常重要的，它是影响我们这次购物体验的最主要因素。</li>
-<li>但是转运公司太多了，天天、天翼、风雷、360海淘等等，十几家让人眼花缭乱，搜索引擎上也有各种抱怨转运公司的帖子，我出于怕麻烦和对顺丰的信任选择了顺丰旗下的<strong><a href="http://www.sfbuy.com/" title="海购丰运">海购丰运 SFBuy</a></strong>。SFBuy 也是用信用卡支付运费，其他的转运公司一般都支持支付宝。</li>
-<li>现在（2014.04）注册 SFBuy 还可获赠一个月会员服务，挺给力的，相关福利可直接去他们网站上看。</li>
+  <li>我想买的是鞋，<strong><a href="http://www.6pm.com" title="6pm">6pm</a></strong> 的折扣是相当给力的。所以选择它。</li>
+  <li>选择转运公司无非看三点：价格、速度、服务水平。网上的经验帖都指出转运公司的选择是非常重要的，它是影响我们这次购物体验的最主要因素。</li>
+  <li>但是转运公司太多了，天天、天翼、风雷、360海淘等等，十几家让人眼花缭乱，搜索引擎上也有各种抱怨转运公司的帖子，我出于怕麻烦和对顺丰的信任选择了顺丰旗下的<strong><a href="http://www.sfbuy.com/" title="海购丰运">海购丰运 SFBuy</a></strong>。SFBuy 也是用信用卡支付运费，其他的转运公司一般都支持支付宝。</li>
+  <li>现在（2014.04）注册 SFBuy 还可获赠一个月会员服务，挺给力的，相关福利可直接去他们网站上看。</li>
 </ul>
-
 
 <p>感觉需要注意的有几点：</p>
 
@@ -273,111 +459,108 @@ To add new posts, simply add a file in the <code>_posts</code> directory that fo
 
 <p>3.商品通过中国海关时顺丰是会主动报关的，在 SFBuy 注册的时候就上传好身份证扫描件吧，免得之后忘记了在海关那浪费更多时间。</p>
 
-<h3>二、下单、付款</h3>
+<h3 id="section-4">二、下单、付款</h3>
 
 <p>两个网站的信息如果都填好了，那么就很简单了，看好了买就行。第一次买还是挺激动的。然后我就碰到了第一个问题：在6pm上下了单，银行也扣款了，shipping status显示的状态是received。这是下单成功了吗？另外，为什么我的total charged显示的却是0呢？</p>
 
 <p>解答是：购买之后系统会给你发个邮件，确认收到了你的订单。状态显示received是收到了订单，在处理。发货的时候会给你发邮件，里面有物流追踪号码。 发货的时候真正扣款。
 相关帖子在<a href="http://www.55haitao.com/bbs/thread-113380-1-1.html">这里</a>。</p>
 
-<h3>三、转运</h3>
-
+<h3 id="section-5">三、转运</h3>
 <ul>
-<li><code>4月16日</code> 下单</li>
-<li><code>4月18日</code> UPS 显示配送到了</li>
-<li><code>4月20日</code> 顺丰发邮件来说鞋子到了我的 SFBuy 储物箱。我登陆了 SFBuy 的网站，上面显示了他们称重的照片，2.3磅。另外加算体积重量一共要算6磅，运费30刀！！这我能忍？当即要求重新包装，减小体积。
+  <li><code>4月16日</code> 下单</li>
+  <li><code>4月18日</code> UPS 显示配送到了</li>
+  <li><code>4月20日</code> 顺丰发邮件来说鞋子到了我的 SFBuy 储物箱。我登陆了 SFBuy 的网站，上面显示了他们称重的照片，2.3磅。另外加算体积重量一共要算6磅，运费30刀！！这我能忍？当即要求重新包装，减小体积。
 <img src="/assets/images/SFBuy1.jpg" alt="Repack 之前" /></li>
-<li><code>4月22日</code> 邮件告诉我重新包装好了。称重2磅，算体积重量3磅，运费15刀。可以接受，令配送之。这里需要提一点的就是 SFBuy 也是发货之后就自动从信用卡扣钱了。而我忘了提前知会刘雄，而且我是凌晨完成的这个手续，弄完之后就关手机睡觉了，导致刘雄一觉醒来莫名地收到信用卡消费15美刀的短信，然后打我电话发我微信都联系我上我，他还以为信用卡被盗刷了，直接果断挂失= =。刘雄的反应是很果断而正确的，是我沟通出了问题。这件事教育我们借别人的卡或钱一定要沟通好，不要大意。
+  <li><code>4月22日</code> 邮件告诉我重新包装好了。称重2磅，算体积重量3磅，运费15刀。可以接受，令配送之。这里需要提一点的就是 SFBuy 也是发货之后就自动从信用卡扣钱了。而我忘了提前知会刘雄，而且我是凌晨完成的这个手续，弄完之后就关手机睡觉了，导致刘雄一觉醒来莫名地收到信用卡消费15美刀的短信，然后打我电话发我微信都联系我上我，他还以为信用卡被盗刷了，直接果断挂失= =。刘雄的反应是很果断而正确的，是我沟通出了问题。这件事教育我们借别人的卡或钱一定要沟通好，不要大意。
 <img src="/assets/images/SFBuy2.jpg" alt="Repack 之后" /></li>
-<li>然后就是漫长的等待！！！！</li>
+  <li>然后就是漫长的等待！！！！</li>
 </ul>
 
-
 <table>
-<thead>
-<tr>
-<th>日期</th>
-<th>时间</th>
-<th>快件状态</th>
-<th style="text-align:center;">当前地点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2014-04-23</td>
-<td>12:31:16</td>
-<td>收件</td>
-<td style="text-align:center;">纽约</td>
-</tr>
-<tr>
-<td>2014-04-23</td>
-<td>16:48:13</td>
-<td>快件在 美国纽约营运中心 装车, 准备送往下一站 天水圍集散中心</td>
-<td style="text-align:center;">纽约</td>
-</tr>
-<tr>
-<td>2014-04-29</td>
-<td>01:54:40</td>
-<td>快件在 天水圍集散中心 装车, 准备送往下一站 天津集散中心</td>
-<td style="text-align:center;">香港</td>
-</tr>
-<tr>
-<td>2014-05-05</td>
-<td>10:48:42</td>
-<td>快件到达天津集散中心</td>
-<td style="text-align:center;">天津市</td>
-</tr>
-<tr>
-<td>2014-05-05</td>
-<td>16:11:39</td>
-<td>快件在 天津集散中心 装车, 准备送往下一站 天津集散中心</td>
-<td style="text-align:center;">天津市</td>
-</tr>
-<tr>
-<td>2014-05-05</td>
-<td>23:41:43</td>
-<td>快件在 天津集散中心     装车, 准备送往下一站 天津集散中心</td>
-<td style="text-align:center;">天津市</td>
-</tr>
-<tr>
-<td>2014-05-06</td>
-<td>02:12:27</td>
-<td>快件在 天津集散中心     装车, 准备送往下一站 西安集散中心</td>
-<td style="text-align:center;">天津市</td>
-</tr>
-<tr>
-<td>2014-05-06</td>
-<td>10:48:29</td>
-<td>快件到达西安集散中心</td>
-<td style="text-align:center;">西安市/咸阳市</td>
-</tr>
-<tr>
-<td>2014-05-06</td>
-<td>14:00:26</td>
-<td>快件在 西安集散中心 装车, 准备送往下一站 西安</td>
-<td style="text-align:center;">西安市/咸阳市</td>
-</tr>
-<tr>
-<td>2014-05-06</td>
-<td>15:15:28</td>
-<td>派件出仓(派件人:冯国权,电话:18706873051)</td>
-<td style="text-align:center;">西安市/咸阳市</td>
-</tr>
-<tr>
-<td>2014-05-06</td>
-<td>16:30:48</td>
-<td>上门派件</td>
-<td style="text-align:center;">西安市/咸阳市</td>
-</tr>
-<tr>
-<td>2014-05-06</td>
-<td>16:30:48</td>
-<td>签收人是：已签收</td>
-<td style="text-align:center;">西安市/咸阳市</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>日期</th>
+      <th>时间</th>
+      <th>快件状态</th>
+      <th style="text-align: center">当前地点</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2014-04-23</td>
+      <td>12:31:16</td>
+      <td>收件</td>
+      <td style="text-align: center">纽约</td>
+    </tr>
+    <tr>
+      <td>2014-04-23</td>
+      <td>16:48:13</td>
+      <td>快件在 美国纽约营运中心 装车, 准备送往下一站 天水圍集散中心</td>
+      <td style="text-align: center">纽约</td>
+    </tr>
+    <tr>
+      <td>2014-04-29</td>
+      <td>01:54:40</td>
+      <td>快件在 天水圍集散中心 装车, 准备送往下一站 天津集散中心</td>
+      <td style="text-align: center">香港</td>
+    </tr>
+    <tr>
+      <td>2014-05-05</td>
+      <td>10:48:42</td>
+      <td>快件到达天津集散中心</td>
+      <td style="text-align: center">天津市</td>
+    </tr>
+    <tr>
+      <td>2014-05-05</td>
+      <td>16:11:39</td>
+      <td>快件在 天津集散中心 装车, 准备送往下一站 天津集散中心</td>
+      <td style="text-align: center">天津市</td>
+    </tr>
+    <tr>
+      <td>2014-05-05</td>
+      <td>23:41:43</td>
+      <td>快件在 天津集散中心	 装车, 准备送往下一站 天津集散中心</td>
+      <td style="text-align: center">天津市</td>
+    </tr>
+    <tr>
+      <td>2014-05-06</td>
+      <td>02:12:27</td>
+      <td>快件在 天津集散中心	 装车, 准备送往下一站 西安集散中心</td>
+      <td style="text-align: center">天津市</td>
+    </tr>
+    <tr>
+      <td>2014-05-06</td>
+      <td>10:48:29</td>
+      <td>快件到达西安集散中心</td>
+      <td style="text-align: center">西安市/咸阳市</td>
+    </tr>
+    <tr>
+      <td>2014-05-06</td>
+      <td>14:00:26</td>
+      <td>快件在 西安集散中心 装车, 准备送往下一站 西安</td>
+      <td style="text-align: center">西安市/咸阳市</td>
+    </tr>
+    <tr>
+      <td>2014-05-06</td>
+      <td>15:15:28</td>
+      <td>派件出仓(派件人:冯国权,电话:18706873051)</td>
+      <td style="text-align: center">西安市/咸阳市</td>
+    </tr>
+    <tr>
+      <td>2014-05-06</td>
+      <td>16:30:48</td>
+      <td>上门派件</td>
+      <td style="text-align: center">西安市/咸阳市</td>
+    </tr>
+    <tr>
+      <td>2014-05-06</td>
+      <td>16:30:48</td>
+      <td>签收人是：已签收</td>
+      <td style="text-align: center">西安市/咸阳市</td>
+    </tr>
+  </tbody>
 </table>
-
 
 <p>Tips:</p>
 
@@ -390,6 +573,7 @@ To add new posts, simply add a file in the <code>_posts</code> directory that fo
 <p>4.货比三家：<a href="http://www.smzdm.com/">什么值得买</a></p>
 
 <p>5.超级好用的 Chrome 插件：<a href="http://zhushou.huihui.cn/">惠惠购物助手</a></p>
+
 ]]></content:encoded>
     </item>
     
@@ -403,9 +587,7 @@ To add new posts, simply add a file in the <code>_posts</code> directory that fo
 
 <!-- more -->
 
-
-<h3>我珍视这几个月</h3>
-
+<h3 id="section">我珍视这几个月</h3>
 <p>考研前这几个月到底对我有多重要呢？现在我还无法给自己一个明确的答案，但其份量无疑是沉甸甸的。如果不是选择考研，我可能不会重新认识自己并做出了一定的积极的改变。</p>
 
 <p>我重新认识了高强和徐畅。确切的说，考研之前我只是知道他们叫「高强」、「徐畅」而已。</p>
@@ -424,20 +606,18 @@ To add new posts, simply add a file in the <code>_posts</code> directory that fo
 <p>虽然对这段时间的复习我对自己还有相当多的不满意的地方：</p>
 
 <ul>
-<li>前期过度自信</li>
-<li>注意力太容易分散</li>
-<li>手机依赖</li>
-<li>逃避英语无视英语硬伤</li>
-<li>政治复习方法有问题</li>
-<li>专业课复习方法有问题</li>
-<li>搬宿舍太晚</li>
+  <li>前期过度自信</li>
+  <li>注意力太容易分散</li>
+  <li>手机依赖</li>
+  <li>逃避英语无视英语硬伤</li>
+  <li>政治复习方法有问题</li>
+  <li>专业课复习方法有问题</li>
+  <li>搬宿舍太晚</li>
 </ul>
-
 
 <p>总的来说，这是一段幸福的时光，对于我来说其中的辛苦其实是可以忽略不计的。「考研<strong>狗</strong>」这种自嘲我不喜欢，在考研的过程中我反而越来越发现从前的那种生活状态还真是名副其实的「大学狗」，而备考中的我却成为了一个「考研<strong>人</strong>」。我深深地厌恶自己以前晚上不睡，早上不起的作息；我也开始发自内心地不再那么喜欢睡懒觉（虽然还是有点喜欢那种感觉）、不再以睡懒觉为荣……</p>
 
-<h3>改变</h3>
-
+<h3 id="section-1">改变</h3>
 <p>我有多容易被<strong>改变</strong>呢？我指的是那种发自内心的，思想上的改变。</p>
 
 <p>我自己似乎得出了一个让自己不愿意承认的答案：<strong>十分容易</strong>。</p>
@@ -456,7 +636,7 @@ To add new posts, simply add a file in the <code>_posts</code> directory that fo
 
 <p>小时候我的眼中除了好人就是坏人；现在我眼中好人与坏人区别却没有那么绝对了。我不知道这是不是就意味着天真的消失、变成熟。</p>
 
-<h3>记忆碎片</h3>
+<h3 id="section-2">记忆碎片</h3>
 
 <p>自习走神的时候脑中总是容易突然冒出一些很久之前的记忆碎片，不知道是不是处于这个状态的时候大脑活跃的区域与长期记忆存放区域相同。</p>
 
@@ -470,34 +650,32 @@ To add new posts, simply add a file in the <code>_posts</code> directory that fo
 
 <p>其实以之为线索可以引出好多好多的回忆：我小学的第一个同桌倪容、把 CD 机带到班上来让我羡慕不已然后二年级就转走了的陶也、靠墙的时候坐在我前面的经常被老师叫成「杨舒龚」的<strong>杨舒龑(yǎn)</strong>（当然，我们一直也没念对——我们都念 yán）坐在我后面一直令我恐惧而厌恶的张东、同桌母狮子彭若菡、同桌四眼仔曹锐、同桌胡珊……我有一次想起来我曾经到熊魏超家吃过一次饭，其实数起来我小学时去过好多同学家吃饭（⊙﹏⊙!有点不好意思数出来）；还有一次上语文课（怎么又是语文课？）坐第一排玩乐高小车被徐鑫徐老师抓现行，老师大怒，命我去教室外站着听课，几分钟后孔尤龙也过来一同罚站了；还有放学被胡老师留下了趴在讲台（脚踩的那个）上写作业的经历，同学们从我身旁走出教室的那个画面我至今印象深刻；还有放学后我坐在第一排抄周瑞的作业，胡老师走了又回来了，看到我这么认真刻苦变得很慈祥地走了过来，刚想表扬我学习态度变好了，却看见旁边还有一本作业……结果是仅是我受罚、还有周瑞、王成、周祠焱；还有学前班玩的「传染病」的游戏，我那时候是真的很当真的。</p>
 
-<h3>入戏</h3>
-
+<h3 id="section-3">入戏</h3>
 <p>我曾经对自己的看法是：一个很无情的人。因为我总是觉得自己对身边的人很冷漠，很少去关心他人。当然，这一方面我也在有意识的改。另一方面，我又有了新的认识，我惊异于自己看电视剧看电影看动漫时的入戏。</p>
 
 <p>与李辉、孟伟、高强交流之后我觉得我的确要比他们更容易投入进那个构造的世界观里去，特别是影片结束之后，有一种很强烈的失落感，有时候还是不想从那个世界观里面出来。这应该也是我看影视一般不快进的原因吧。回想起来，我早就可以注意到这一点。我小时候看中央台放奥特曼就是这样的，奥特曼放完之后我会向我妈撒泼，哭着喊着要我妈打电话到中央电视台叫他们再放几集。</p>
 
 <p>我想我是一个理想观众。</p>
 
-<h3>被遗忘的教导</h3>
-
+<h3 id="section-4">被遗忘的教导</h3>
 <p>在我手机的记事本里，有一些大一时就记下的话，至今仍觉得非常有道理，如果能听得进去，应该是受益匪浅的。</p>
 
 <p>这是施建章老师在<em>计算机文化基础</em>课上的教导</p>
 
-<blockquote><ol>
-<li>在大学四年，主动向老师寻求帮助、寻求方向，会有很大收获的。老师是乐意帮助你的，但他们不会主动帮助你。</li>
-<li>为什么我们总是对别人学的、没学的有兴趣，对自己现在学的却不感兴趣，因为我们不知道学了是去干什么。</li>
-<li>你以后会有痛入骨髓的体会：易会难精。</li>
-<li>软件的学习还应以「任务」为目标带动学习！</li>
-<li>学习的本质是「学习能力」的培养；体育的本意是通过运动锻炼来健全人的人格。</li>
-<li>学习的方式有两种：<br/>
-1)厚积薄发：大学四年主要是这种方式学习，你需要沉下来、耐住寂寞，在这四年积累自己。<br/>
+<blockquote>
+  <ol>
+    <li>在大学四年，主动向老师寻求帮助、寻求方向，会有很大收获的。老师是乐意帮助你的，但他们不会主动帮助你。</li>
+    <li>为什么我们总是对别人学的、没学的有兴趣，对自己现在学的却不感兴趣，因为我们不知道学了是去干什么。</li>
+    <li>你以后会有痛入骨髓的体会：易会难精。</li>
+    <li>软件的学习还应以「任务」为目标带动学习！</li>
+    <li>学习的本质是「学习能力」的培养；体育的本意是通过运动锻炼来健全人的人格。</li>
+    <li>学习的方式有两种：<br />
+1)厚积薄发：大学四年主要是这种方式学习，你需要沉下来、耐住寂寞，在这四年积累自己。<br />
 2)即学即用：以任务带动学习。</li>
-</ol>
+  </ol>
 </blockquote>
 
-<h3>没有结束</h3>
-
+<h3 id="section-5">没有结束</h3>
 <p>不管怎么说，过去都过去了。迎接未来的挑战，我在心态上已准备就绪。</p>
 ]]></content:encoded>
     </item>
