@@ -15,3 +15,4 @@ kramdown:
    #- smart         # typographic substitutions with SmartyPants
 gems:
   - jekyll-mentions
+  - jemoji
