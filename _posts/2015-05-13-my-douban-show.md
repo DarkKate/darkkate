@@ -3,7 +3,7 @@ layout: post
 title: "我的豆瓣秀"
 date: 2015-05-13
 comments: true
-categories: lifestyle
+categories: 折腾
 tag: 
   - douban
 ---
@@ -53,6 +53,5 @@ tag:
 </html>
 {% endhighlight %}
 
-因为纯 Html 文件不会出现这些问题，所以感觉这个情况的出现有可能与 CSS 有关。
 
-@imsobear 救我！ @darkkate
+@imsobear 救我！

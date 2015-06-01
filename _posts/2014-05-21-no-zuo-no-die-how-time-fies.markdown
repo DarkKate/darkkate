@@ -2,11 +2,16 @@
 layout: post
 title:  "No Zuo No Die How Time Fies!"
 date:   2014-05-21
-categories: nonsense
+categories: 折腾
+tags: 
+     - 购物
+     - update
 ---
 
 *又到了批判自己浪费时间的日常了。*
+
 ## D-Day
+
 事情是这样的。
 
 一周之前，貌似是一个慵懒的上午，我躺在床上，然后不知怎么脑中冒出了**固态硬盘**这个词。然后我立马起床看了一个关于笔记本电脑利用光驱位安装固态硬盘的帖子[^1]，巧的是我的笔电也刚好是奶牛的 NV47H 系列！内心YY了一下 SSD 让年迈的电脑焕发新生的情景，那画面实在太美。
